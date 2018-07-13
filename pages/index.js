@@ -1,3 +1,5 @@
+import styled from 'styled-components'
+
 import Head from '../components/head'
 import InfoSection from '../components/generic/InfoSection'
 import WorkCard from '../components/specific/WorkCard'
@@ -75,20 +77,60 @@ const Skill = skillInfo.map((skill, i) => {
   )
 })
 
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+`
+
+const About = styled.div`
+  width: 30%;
+  min-width: 350px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+`
+
+const AboutP = styled.p`
+  line-height: 28px;
+  margin: 24px 0;
+`
+
+const GitHubP = styled.p`
+  margin-bottom: 24px;
+`
+
+const Info = styled.div`
+  width: 65%;
+  padding: 20px;
+  box-sizing: border-box;
+`
+
 export default () => {
   return (
-    <div>
+    <Container>
       <Head title="Rikin Katyal" />
-      <InfoSection title="Work Experience 🏢">
-        { Work }
-      </InfoSection>
-      <InfoSection title="Projects 💻">
-        { Project  }
-        <p>You can find these projects and more on my <a href="https://github.com/sirvar" target="_blank">GitHub</a></p>
-      </InfoSection>
-      <InfoSection title="Skills 🛠">
-        { Skill }
-      </InfoSection>
-    </div>
+      <About>
+        <h1>Hey! 👋 I'm Rikin Katyal</h1>
+        <AboutP>I'm a 19 year old software developer from Toronto, Canada 🇨🇦working at <a href="https://uniquid.com" target="_">UniquID</a> 👨🏽‍💻and studying Computer Science at the <a href="https://www.utoronto.ca/" target="_">University of Toronto</a> 🎓</AboutP>
+        <AboutP>You can find me on social media 📱, usually under the username <b><i>sirvar</i></b>. I get a lot of questions about that alias/nickname. Why <b><i>sirvar</i></b>?</AboutP>
+        <AboutP>It actually has <b>2</b> meanings, both really geeky. First, if you say it <i>really</i> fast, it sounds like server 🖥. Second, if you break it up, it becomes Sir Var 👨🏽‍⚖️; a respected variable 😜</AboutP>
+        <AboutP>Feel free to reach out to me via email at <a href="mailto:me@sirvar.com">me@sirvar.com</a> ✉️</AboutP>
+        {/* <AboutP>Or you can connect with me here:</AboutP> */}
+      </About>
+      <Info>
+        <InfoSection title="Work Experience 🏢">
+          { Work }
+        </InfoSection>
+        <InfoSection title="Projects 💻">
+          { Project  }
+        </InfoSection>
+        <GitHubP>You can find these projects and more on my <a href="https://github.com/sirvar" target="_blank">GitHub</a></GitHubP>
+        <InfoSection title="Skills 🛠">
+          { Skill }
+        </InfoSection>
+      </Info>
+    </Container>
   )
 }
