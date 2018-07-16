@@ -3,6 +3,10 @@ import styled from 'styled-components'
 const WorkDiv = styled.div`
   margin: 0 20px 10px 0;
   width: 45%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 export default (props) => {

@@ -4,6 +4,7 @@ import Head from '../components/head'
 import InfoSection from '../components/generic/InfoSection'
 import WorkCard from '../components/specific/WorkCard'
 import ProjectCard from '../components/specific/ProjectCard'
+import SocialCard from '../components/specific/SocialCard'
 
 const workInfo = [
   {
@@ -77,11 +78,49 @@ const Skill = skillInfo.map((skill, i) => {
   )
 })
 
+const socialLinks = [
+  {
+    "emoji": "🐱",
+    "website": "GitHub",
+    "link": "https://github.com/sirvar"
+  },
+  {
+    "emoji": "🐦",
+    "website": "Twitter",
+    "link": "https://twitter.com/sirvar_"
+  },
+  {
+    "emoji": "🔗",
+    "website": "LinkedIn",
+    "link": "https://www.linkedin.com/in/sirvar/"
+  },
+  {
+    "emoji": "😇",
+    "website": "Angel",
+    "link": "https://angel.co/sirvar"
+  },
+  {
+    "emoji": "📑",
+    "website": "StackOverflow",
+    "link": "https://stackoverflow.com/users/3150094/sirvar"
+  }
+]
+
+const Social = socialLinks.map((social, i) => {
+  return (
+    <SocialCard {...social} />
+  )
+})
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `
 
 const About = styled.div`
@@ -90,6 +129,11 @@ const About = styled.div`
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
+
+  @media (max-width: 800px) {
+    text-align: left;
+    width: 100%;
+  }
 `
 
 const AboutP = styled.p`
@@ -101,10 +145,21 @@ const GitHubP = styled.p`
   margin-bottom: 24px;
 `
 
+const SocialLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`
+
 const Info = styled.div`
   width: 65%;
   padding: 20px;
   box-sizing: border-box;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `
 
 export default () => {
@@ -117,7 +172,10 @@ export default () => {
         <AboutP>You can find me on social media 📱, usually under the username <b><i>sirvar</i></b>. I get a lot of questions about that alias/nickname. Why <b><i>sirvar</i></b>?</AboutP>
         <AboutP>It actually has <b>2</b> meanings, both really geeky. First, if you say it <i>really</i> fast, it sounds like server 🖥. Second, if you break it up, it becomes Sir Var 👨🏽‍⚖️; a respected variable 😜</AboutP>
         <AboutP>Feel free to reach out to me via email at <a href="mailto:me@sirvar.com">me@sirvar.com</a> ✉️</AboutP>
-        {/* <AboutP>Or you can connect with me here:</AboutP> */}
+        <AboutP>Or you can connect with me here:</AboutP>
+        <SocialLinks>
+          { Social }
+        </SocialLinks>
       </About>
       <Info>
         <InfoSection title="Work Experience 🏢">
