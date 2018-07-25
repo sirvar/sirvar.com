@@ -1,19 +1,23 @@
-import styled from 'styled-components'
-
-const ProjectDiv = styled.div`
-  margin: 0 20px 10px 0;
-  width: 45%;
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
-`
-
 export default (props) => {
   return (
-    <ProjectDiv>
+    <div className="project">
       <p><a href={ props.link } target="_blank">{ props.title }</a> - { props.technologies }</p>
       <p>{ props.description }</p>
-    </ProjectDiv>
+      <style jsx>{`
+        .project {
+          margin: 0 20px 10px 0;
+          width: 45%;
+        }
+        .project p {
+          margin: 10px 0 !important;
+        }
+
+        @media (max-width: 600px) {
+          .project {
+            width: 100%;
+          }
+        }
+      `}</style>
+    </div>
   )
 }

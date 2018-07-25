@@ -1,5 +1,3 @@
-import styled from 'styled-components'
-
 import Head from '../components/head'
 import InfoSection from '../components/generic/InfoSection'
 import WorkCard from '../components/specific/WorkCard'
@@ -73,7 +71,10 @@ const Skill = skillInfo.map((skill, i) => {
   return (
     <div>
       <h3>{ skill.title }</h3>
-      <p>{ skill.list }</p>
+      <p>
+        { skill.list }
+        <style jsx>{` line-height: 28px; `}</style>
+      </p>
     </div>
   )
 })
@@ -112,83 +113,113 @@ const Social = socialLinks.map((social, i) => {
   )
 })
 
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
-`
-
-const About = styled.div`
-  width: 30%;
-  min-width: 350px;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-
-  @media (max-width: 800px) {
-    text-align: left;
-    width: 100%;
-  }
-`
-
-const AboutP = styled.p`
-  line-height: 28px;
-  margin: 24px 0;
-`
-
-const GitHubP = styled.p`
-  margin-bottom: 24px;
-`
-
-const SocialLinks = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-`
-
-const Info = styled.div`
-  width: 65%;
-  padding: 20px;
-  box-sizing: border-box;
-
-  @media (max-width: 800px) {
-    width: 100%;
-  }
-`
-
 export default () => {
   return (
-    <Container>
+    <div className="container">
+      <style jsx global>{`
+        body {
+          font-family: "IBM Plex Sans", "Helvetica", "Arial";
+          margin: 0;
+          color: #3f3f3f;
+        }
+        h1 {
+          font-weight: 700;
+          font-size: 30px;
+          margin: 0;
+        }
+        h2 {
+          font-weight: 700;
+          font-size: 22px;
+          margin: 0;
+        }
+        h3 {
+          font-weight: 700;
+          font-size: 18px;
+          margin: 0;
+          margin-top: 10px;
+        }
+        p {
+          font-size: 16px;
+          margin: 10px 0;
+        }
+        a {
+          color: #25B394;
+        }
+        b {
+          color: #25B394;
+        }
+        h3 a {
+          text-decoration: none;
+        }
+        .container {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+        }
+        .about {
+          width: 30%;
+          min-width: 350px;
+          padding: 20px;
+          box-sizing: border-box;
+          text-align: center;
+        }
+        .about p {
+          line-height: 28px;
+          margin: 24px 0;
+        }
+        .social {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .info {
+          width: 65%;
+          padding: 20px;
+          box-sizing: border-box;
+        }
+        .info p {
+          margin-bottom: 24px;
+        }
+        @media (max-width: 800px) {
+          .container {
+            flex-direction: column;
+          }
+          .about {
+            text-align: left;
+            width: 100%;
+          }
+          .info {
+            width: 100%;
+          }
+        }
+      `}</style>
       <Head title="Rikin Katyal" />
-      <About>
+      <div className="about">
         <h1>Hey! 👋 I'm Rikin Katyal</h1>
-        <AboutP>I'm a 19 year old software developer from Toronto, Canada 🇨🇦working at <a href="https://uniquid.com" target="_">UniquID</a> 👨🏽‍💻and studying Computer Science at the <a href="https://www.utoronto.ca/" target="_">University of Toronto</a> 🎓</AboutP>
-        <AboutP>You can find me on social media 📱, usually under the username <b><i>sirvar</i></b>. I get a lot of questions about that alias/nickname. Why <b><i>sirvar</i></b>?</AboutP>
-        <AboutP>It actually has <b>2</b> meanings, both really geeky. First, if you say it <i>really</i> fast, it sounds like server 🖥. Second, if you break it up, it becomes Sir Var 👨🏽‍⚖️; a respected variable 😜</AboutP>
-        <AboutP>Feel free to reach out to me via email at <a href="mailto:me@sirvar.com">me@sirvar.com</a> ✉️</AboutP>
-        <AboutP>Or you can connect with me here:</AboutP>
-        <SocialLinks>
+        <p>I'm a 19 year old software developer from Toronto, Canada 🇨🇦working at <a href="https://uniquid.com" target="_">UniquID</a> 👨🏽‍💻and studying Computer Science at the <a href="https://www.utoronto.ca/" target="_">University of Toronto</a> 🎓</p>
+        <p>You can find me on social media 📱, usually under the username <b><i>sirvar</i></b>. I get a lot of questions about that alias/nickname. Why <b><i>sirvar</i></b>?</p>
+        <p>It actually has <b>2</b> meanings, both really geeky. First, if you say it <i>really</i> fast, it sounds like server 🖥. Second, if you break it up, it becomes Sir Var 👨🏽‍⚖️; a respected variable 😜</p>
+        <p>Feel free to reach out to me via email at <a href="mailto:me@sirvar.com">me@sirvar.com</a> ✉️</p>
+        <p>Or you can connect with me here:</p>
+        <div className="social">
           { Social }
-        </SocialLinks>
-      </About>
-      <Info>
+        </div>
+        <p>&copy; {(new Date().getFullYear())} Rikin Katyal.</p>
+      </div>
+      <div className="info">
         <InfoSection title="Work Experience 🏢">
           { Work }
         </InfoSection>
         <InfoSection title="Projects 💻">
           { Project  }
         </InfoSection>
-        <GitHubP>You can find these projects and more on my <a href="https://github.com/sirvar" target="_blank">GitHub</a></GitHubP>
+        <p>You can find these projects and more on my <a href="https://github.com/sirvar" target="_blank">GitHub</a></p>
         <InfoSection title="Skills 🛠">
           { Skill }
         </InfoSection>
-      </Info>
-    </Container>
+      </div>
+    </div>
   )
 }

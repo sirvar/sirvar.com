@@ -1,19 +1,23 @@
-import styled from 'styled-components'
-
-const WorkDiv = styled.div`
-  margin: 0 20px 10px 0;
-  width: 45%;
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
-`
-
 export default (props) => {
   return (
-    <WorkDiv>
+    <div className="work">
       <p>{ props.position } at <b>{ props.company }</b></p>
       <p><i>{ props.timeline }</i></p>
-    </WorkDiv>
+      <style jsx>{`
+        .work {
+          margin: 0 20px 10px 0;
+          width: 45%;
+        }
+        .work p {
+          margin: 10px 0 !important;
+        }
+
+        @media (max-width: 600px) {
+          .work {
+            width: 100%;
+          }
+        }
+      `}</style>
+    </div>
   )
 }

@@ -1,0 +1,11 @@
+deployment:
+  development:
+    branch: develop
+    commands:
+      - URL=$(now -t ${NOW_TOKEN})
+      - now -t ${NOW_TOKEN} alias set ${URL} eedi-dev.now.sh
+  production:
+    branch: master
+    commands:
+      - URL=$(now -t ${NOW_TOKEN})
+      - now -t ${NOW_TOKEN} alias set ${URL} eedi.now.sh
