@@ -1,12 +1,13 @@
 import Head from '../components/head'
 import InfoSection from '../components/generic/InfoSection'
+import ToggleButton from '../components/generic/SingleToggleButton'
 import WorkCard from '../components/specific/WorkCard'
 import ProjectCard from '../components/specific/ProjectCard'
 import SocialCard from '../components/specific/SocialCard'
 
 const workInfo = [
   {
-    "position": "Software Developer",
+    "position": "Full Stack Developer",
     "company": "UniquID",
     "timeline": "June 2018 - Present"
   },
@@ -36,7 +37,7 @@ const projectInfo = [
     "title": "sendit ✈️",
     "link": "https://github.com/sirvar/sendit",
     "technologies": "Bash Shell",
-    "description": "A serverless remote torrenting utility"
+    "description": "A scalable utility for serverless remote torrenting"
   },
   {
     "title": "backend-proxy 🔙",
@@ -113,113 +114,143 @@ const Social = socialLinks.map((social, i) => {
   )
 })
 
-export default () => {
-  return (
-    <div className="container">
-      <style jsx global>{`
-        body {
-          font-family: "IBM Plex Sans", "Helvetica", "Arial";
-          margin: 0;
-          color: #3f3f3f;
-        }
-        h1 {
-          font-weight: 700;
-          font-size: 30px;
-          margin: 0;
-        }
-        h2 {
-          font-weight: 700;
-          font-size: 22px;
-          margin: 0;
-        }
-        h3 {
-          font-weight: 700;
-          font-size: 18px;
-          margin: 0;
-          margin-top: 10px;
-        }
-        p {
-          font-size: 16px;
-          margin: 10px 0;
-        }
-        a {
-          color: #25B394;
-        }
-        b {
-          color: #25B394;
-        }
-        h3 a {
-          text-decoration: none;
-        }
-        .container {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: row;
-        }
-        .about {
-          width: 30%;
-          min-width: 350px;
-          padding: 20px;
-          box-sizing: border-box;
-          text-align: center;
-        }
-        .about p {
-          line-height: 28px;
-          margin: 24px 0;
-        }
-        .social {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          flex-wrap: wrap;
-        }
-        .info {
-          width: 65%;
-          padding: 20px;
-          box-sizing: border-box;
-        }
-        .info p {
-          margin-bottom: 24px;
-        }
-        @media (max-width: 800px) {
+class App extends React.Component {
+  constructor() {
+    super()
+    console.log("donate:")
+    console.log("%cbtc: 3HNd76oCjTqdAhoZUB55RACcoEsQW97sNn", "color: #FF9900")
+    console.log("%ceth: 0xfa84d06f553447d317e75dfb49a4d3175a5a993b", "color: #3C3C3D")
+    console.log("%cltc: LXz73gdkwt1qzCUv4teUjVxCho5SMgoTPv", "color: #d3d3d3")
+    console.log("%cbtc: lol", "color: #ee8c28")
+
+    this.state = {
+      light: true
+    }
+  }
+  
+  render() {
+    var light = this.state.light
+      return (
+      <div className="container">
+        <style jsx global>{`
+          body {
+            font-family: "IBM Plex Sans", "Helvetica", "Arial";
+            margin: 0;
+            color: ${ light ? "#3f3f3f" : "#FFFFFF" };
+            width: 100%;
+            height: 100%;
+            background-color: ${ light ? "#FFFFFF" : "#3f3f3f" };
+          }
+          h1 {
+            font-weight: 700;
+            font-size: 30px;
+            margin: 0;
+          }
+          h2 {
+            font-weight: 700;
+            font-size: 22px;
+            margin: 0;
+          }
+          h3 {
+            font-weight: 700;
+            font-size: 18px;
+            margin: 0;
+            margin-top: 10px;
+          }
+          p {
+            font-size: 16px;
+            margin: 10px 0;
+          }
+          a {
+            color: #25B394;
+          }
+          b {
+            color: #25B394;
+          }
+          h3 a {
+            text-decoration: none;
+          }
           .container {
-            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
           }
           .about {
-            text-align: left;
-            width: 100%;
+            width: 30%;
+            min-width: 350px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+          }
+          .about p {
+            line-height: 28px;
+            margin: 24px 0;
+          }
+          .social {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
           }
           .info {
-            width: 100%;
+            width: 65%;
+            padding: 20px;
+            box-sizing: border-box;
           }
-        }
-      `}</style>
-      <Head title="Rikin Katyal" />
-      <div className="about">
-        <h1>Hey! 👋 I'm Rikin Katyal</h1>
-        <p>I'm a 19 year old software developer from Toronto, Canada 🇨🇦working at <a href="https://uniquid.com" target="_">UniquID</a> 👨🏽‍💻and studying Computer Science at the <a href="https://www.utoronto.ca/" target="_">University of Toronto</a> 🎓</p>
-        <p>You can find me on social media 📱, usually under the username <b><i>sirvar</i></b>. I get a lot of questions about that alias/nickname. Why <b><i>sirvar</i></b>?</p>
-        <p>It actually has <b>2</b> meanings, both really geeky. First, if you say it <i>really</i> fast, it sounds like server 🖥. Second, if you break it up, it becomes Sir Var 👨🏽‍⚖️; a respected variable 😜</p>
-        <p>Feel free to reach out to me via email at <a href="mailto:me@sirvar.com">me@sirvar.com</a> ✉️</p>
-        <p>Or you can connect with me here:</p>
-        <div className="social">
-          { Social }
+          .info p {
+            margin-bottom: 24px;
+          }
+          @media (max-width: 800px) {
+            .container {
+              flex-direction: column;
+            }
+            .about {
+              text-align: left;
+              width: 100%;
+            }
+            .info {
+              width: 100%;
+            }
+            #copyright {
+              display: none;
+            }
+          }
+        `}</style>
+        <Head title="Rikin Katyal" />
+        <div className="about">
+          <h1>Hey! 👋 I'm Rikin Katyal</h1>
+          <p>I'm a 19 year old software developer from Canada 🇨🇦working at <a href="https://uniquid.com" target="_">UniquID</a> 👨🏽‍💻and studying Computer Science at the <a href="http://www.uwindsor.ca/" target="_">University of Windsor</a> 🎓</p>
+          <p>You can find me on social media 📱, usually under the username <b><i>sirvar</i></b>. I get a lot of questions about that alias/nickname. Why <b><i>sirvar</i></b>?</p>
+          <p>It actually has <b>2</b> meanings, both really geeky. First, if you say it <i>really</i> fast, it sounds like server 🖥. Second, if you break it up, it becomes Sir Var 👨🏽‍⚖️; a respected variable 😜</p>
+          <p>Feel free to reach out to me via email at <a href="mailto:me@sirvar.com">me@sirvar.com</a> ✉️ or checkout my <a href="/static/resume.pdf">resume</a> 📄</p>
+          <p>Or you can connect with me here:</p>
+          <div className="social">
+            { Social }
+          </div>
+          <p id="copyright">&copy; {(new Date().getFullYear())} Rikin Katyal</p>
         </div>
-        <p>&copy; {(new Date().getFullYear())} Rikin Katyal.</p>
+        <div className="info">
+          <InfoSection title="Work Experience 🏢">
+            { Work }
+          </InfoSection>
+          <InfoSection title="Projects 💻">
+            { Project  }
+          </InfoSection>
+          <p>You can find these projects and more on my <a href="https://github.com/sirvar" target="_blank">GitHub</a></p>
+          <InfoSection title="Skills 🛠">
+            { Skill }
+          </InfoSection>
+        </div>
+        <ToggleButton
+          on="💡"
+          off="💡"
+          active={ this.state.light }
+          onClick={() => { this.setState({ light: !this.state.light }) }}
+        />
       </div>
-      <div className="info">
-        <InfoSection title="Work Experience 🏢">
-          { Work }
-        </InfoSection>
-        <InfoSection title="Projects 💻">
-          { Project  }
-        </InfoSection>
-        <p>You can find these projects and more on my <a href="https://github.com/sirvar" target="_blank">GitHub</a></p>
-        <InfoSection title="Skills 🛠">
-          { Skill }
-        </InfoSection>
-      </div>
-    </div>
-  )
+    )
+  }
 }
+
+export default App
