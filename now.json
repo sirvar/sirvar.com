@@ -5,7 +5,7 @@
     "www.sirvar.com"
   ],
   "github": {
-    "enabled": "true",
-    "autoAlias": "true"
+    "enabled": true,
+    "autoAlias": true
   }
 }
