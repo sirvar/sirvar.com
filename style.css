@@ -98,10 +98,10 @@ a:hover {
   text-align: right;
   width: 300px;
   position: absolute;
-  margin-left: 90px;
   margin-top: -97px;
   font-size: 50px;
   opacity: 0.08;
+  right: 20px;
 }
 
 .places .card {
@@ -141,10 +141,6 @@ a:hover {
     margin-left: 80px;
     padding: 20px;
     width: calc(100% - 120px);
-  }
-
-  .work .places h5 {
-    right: 40px;
   }
 
   .copyright {
