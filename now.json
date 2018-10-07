@@ -4,5 +4,7 @@
     "sirvar.com",
     "www.sirvar.com"
   ],
-  "files": "public/"
+  "files": [
+    "public/"
+  ]
 }
