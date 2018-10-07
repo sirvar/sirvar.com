@@ -1,5 +1,7 @@
 {
-  "name": "sirvar.com",
-  "alias": "https://sirvar.com",
-  "type": "npm"
+  "name": "sirvar",
+  "alias": [
+    "sirvar.com",
+    "www.sirvar.com"
+  ]
 }
