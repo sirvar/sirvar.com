@@ -98,14 +98,14 @@ a:hover {
   text-align: right;
   width: 300px;
   position: absolute;
-  margin-left: 60px;
+  margin-left: 90px;
   margin-top: -97px;
   font-size: 50px;
   opacity: 0.08;
 }
 
 .places .card {
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 
 .about {
@@ -124,9 +124,10 @@ a:hover {
   position: fixed;
   bottom: 0px;
   left: calc(50% - 100px);
+  background: #22222A;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 980px) {
   .container {
     flex-direction: column;
   }
@@ -142,15 +143,35 @@ a:hover {
     width: calc(100% - 120px);
   }
 
+  .work .places h5 {
+    right: 40px;
+  }
+
   .copyright {
     position: relative;
   }
 }
 
 @media (max-width: 640px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .about p {
+    margin-bottom: 5px;
+  }
+
   .work .places h5 {
     font-size: 32px;
-    margin-left: -20px;
+    right: 20px;
     margin-top: -80px;
   }
   
@@ -174,6 +195,7 @@ a:hover {
   .about, .work {
     margin-left: 50px;
     width: calc(100% - 90px);
+    padding: 5px 20px;
   }
 }
 

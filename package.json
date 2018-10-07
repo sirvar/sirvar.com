@@ -1,0 +1,19 @@
+{
+  "name": "sirvar.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "now --public public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirvar/sirvar.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirvar/sirvar.com/issues"
+  },
+  "homepage": "https://github.com/sirvar/sirvar.com#readme"
+}
