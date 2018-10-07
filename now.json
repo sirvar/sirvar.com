@@ -3,5 +3,9 @@
   "alias": [
     "sirvar.com",
     "www.sirvar.com"
-  ]
+  ],
+  "github": {
+    "enabled": "true",
+    "autoAlias": "true"
+  }
 }
