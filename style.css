@@ -1,0 +1,182 @@
+body {
+  background: #22222A;
+  color: #BDBDD3;
+  font-family: 'Overpass Mono', monospace;
+  /* font-family: 'Poppins', 'Roboto', 'Helvetica', 'Arial', sans-serif; */
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  font-family: 'Poppins', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-size: 40px;
+  color: #ffffff;
+}
+
+p {
+  line-height: 1.9em;
+}
+
+a {
+  color: #BDBDD3;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.hero {
+  background: #141419;
+  border-right: 1px solid #626275;
+  color: #ffffff;
+  height: 100%;
+  width: 80px;
+  position: fixed;
+  font-family: 'Poppins', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+.intro {
+  height: auto;
+  transform: rotate(-90deg);
+  position: fixed;
+  top: 140px;
+  left: -113px;
+}
+
+.intro h3 {
+  line-height: 80px;
+  margin: 0;
+}
+
+.intro span {
+  font-weight: 100;
+  color: #626275;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  position: fixed;
+  bottom: 10px;
+}
+
+.icons a {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.work {
+  padding: 40px;
+  width: 50%;
+}
+
+.work .places {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.places h4 {
+  margin: 0;
+}
+
+.places a {
+  text-decoration: none;
+  color: #BDBDD3;
+}
+
+.work .places h5 {
+  font-family: 'Poppins', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: bold;
+  text-align: right;
+  width: 300px;
+  position: absolute;
+  margin-left: 60px;
+  margin-top: -97px;
+  font-size: 50px;
+  opacity: 0.08;
+}
+
+.places .card {
+  margin-bottom: 30px;
+}
+
+.about {
+  width: 50%;
+  padding: 40px;
+  margin-left: 80px;
+}
+
+.about p {
+  margin-bottom: 20px;
+}
+
+.copyright {
+  width: 200px;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  left: calc(50% - 100px);
+}
+
+@media (max-width: 960px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .about {
+    padding: 20px;
+    width: calc(100% - 120px);
+  }
+  
+  .work {
+    margin-left: 80px;
+    padding: 20px;
+    width: calc(100% - 120px);
+  }
+
+  .copyright {
+    position: relative;
+  }
+}
+
+@media (max-width: 640px) {
+  .work .places h5 {
+    font-size: 32px;
+    margin-left: -20px;
+    margin-top: -80px;
+  }
+  
+  .hero {
+    width: 50px;
+  }
+
+  .intro {
+    margin-top: 14px;
+    margin-left: -14px;
+  }
+
+  .intro h3 {
+    line-height: 50px;
+  }
+  
+  .icons {
+    width: 50px;
+  }
+
+  .about, .work {
+    margin-left: 50px;
+    width: calc(100% - 90px);
+  }
+}
+
+*::selection {
+  background: #141419;
+}
