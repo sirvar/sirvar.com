@@ -2,7 +2,6 @@ body {
   background: #22222A;
   color: #BDBDD3;
   font-family: 'Overpass Mono', monospace;
-  /* font-family: 'Poppins', 'Roboto', 'Helvetica', 'Arial', sans-serif; */
   margin: 0;
 }
 
@@ -45,7 +44,7 @@ a:hover {
   transform: rotate(-90deg);
   position: fixed;
   top: 140px;
-  left: -113px;
+  left: -122px;
 }
 
 .intro h3 {
@@ -56,6 +55,7 @@ a:hover {
 .intro span {
   font-weight: 100;
   color: #626275;
+  padding-left: 10px;
 }
 
 .icons {
@@ -127,7 +127,7 @@ a:hover {
   background: #22222A;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1060px) {
   .container {
     flex-direction: column;
   }
@@ -197,4 +197,31 @@ a:hover {
 
 *::selection {
   background: #141419;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: #FFFFFF;
+    color: #22222A;
+  }
+
+  h2 {
+    color: black;
+  }
+
+  a {
+    color: #000000;
+  }
+
+  a:hover {
+    color: #666666;
+  }
+
+  .copyright {
+    background-color: #FFFFFF;
+  }
+
+  *::selection {
+    background: #F0F0F0;
+  }
 }
