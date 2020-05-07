@@ -1,4 +1,4 @@
-import fetch from "isomorphic-fetch"
+import "isomorphic-unfetch"
 
 export default async (req, res) => {
   try {
@@ -7,6 +7,7 @@ export default async (req, res) => {
     .then(data => res.status(200).json({
       downloads: data.downloads
     }))
+    .catch(e => res.status(500).json({error: e}))
   } catch (e) {
     res.status(500).json({error: e})
   }
