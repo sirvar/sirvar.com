@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Card from './common/card'
 
-const star = '/star.svg'
-const download = '/download.svg'
-
 const Project = styled.a`
   text-decoration: none;
 `
@@ -30,29 +27,26 @@ const Icon = styled.img`
 const CardView = ({
   name,
   description,
-  stars,
-  downloads,
-  npmDownloads,
+  icon,
+  value,
+  stats,
+  api,
   technology,
   link
 }) => {
   const [stat, setStat] = useState(0);
 
   useEffect(() => {
-    if (stars) {
-      fetch('/api/github?repo=' + stars)
+    if (stats) {
+      setStat(stats)
+    } else if (api == 'github') {
+      fetch('/api/github?repo=' + value)
       .then(res => res.json())
       .then(data => setStat(data.stars))
-    }
-  
-    if (npmDownloads) {
-      fetch('/api/npm?package=' + npmDownloads)
+    } else if (api == 'npm') {
+      fetch('/api/npm?package=' + value)
       .then(res => res.json())
-      .then(data => {
-        const rounded = Math.round((data.downloads / 1000)) * 1000
-        const formatted = rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-        setStat(formatted)
-      })
+      .then(data => setStat(data.downloads))
     }
   }, []);
 
@@ -63,32 +57,14 @@ const CardView = ({
         <Card.Title>{ name }</Card.Title>
         <Card.Description>{ description }</Card.Description>
         <Project.Stats>
-          {stars && <>
-            <Icon src={star} />
+          <>
+            <Icon src={icon} />
             <Project.Stats.Value>{ stat }</Project.Stats.Value>
-          </>}
-          {downloads && <>
-            <Icon src={download} />
-            <Project.Stats.Value>{ downloads }</Project.Stats.Value>
-          </>}
-          {npmDownloads && <>
-            <Icon src={download} />
-            <Project.Stats.Value>{ stat }+</Project.Stats.Value>
-          </>}
+          </>
         </Project.Stats>
       </Card>
     </Project>
   )
-}
-
-export async function getStaticProps() {
-  // The value of the `props` key will be
-  //  passed to the `Home` component
-  return {
-    props: {
-      test: "yuo"
-    }
-  }
 }
 
 export default CardView

@@ -6,8 +6,8 @@ const Card = styled.div`
   padding: 2em;
   margin: 1em 0;
   border-radius: 0.25em;
-  transition: all .3s cubic-bezier(0.75, 0, 0.25, 1);
   &:hover {
+    transition: all .3s cubic-bezier(0.75, 0, 0.25, 1);
     transform: scale(1.075);
   }
 `

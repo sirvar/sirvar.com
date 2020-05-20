@@ -3,32 +3,42 @@ import styled from 'styled-components'
 import Project from './project'
 import Work from './work'
 
-const projects = [
+const star = '/star.svg'
+const download = '/download.svg'
+
+export const projects = [
   {
     name: 'BluetoothKit',
     description: 'BluetoothKit is an incredibly lightweight and simple open source library to interface with Bluetooth devices on Android.',
-    stars: 'sirvar/bluetoothkit-android',
+    value: 'sirvar/bluetoothkit-android',
+    api: 'github',
+    icon: star,
     technology: 'Android',
     link: 'https://github.com/sirvar/bluetoothkit-android'
   },
   {
     name: 'Quick Connect',
     description: 'A quick settings tile app that lets you quickly connect to a paired Bluetooth device such as a pair of headphones or a Bluetooth speaker.',
-    downloads: '15,000+',
+    value: '15,000+',
+    icon: download,
     technology: 'Android',
     link: 'https://play.google.com/store/apps/details?id=com.sirvar.quickconnect'
   },
   {
     name: 'robin',
     description: 'An Android login library that removes repetitive development of login & sign up UX and flows.',
-    stars: 'sirvar/robin',
+    value: 'sirvar/robin',
+    api: 'github',
+    icon: star,
     technology: 'Android',
     link: 'https://github.com/sirvar/robin'
   },
   {
     name: 'backend-proxy',
     description: 'Backend proxy is a tool to route your REST API through a proxy.',
-    npmDownloads: 'backend-proxy',
+    value: 'backend-proxy',
+    api: 'npm',
+    icon: download,
     technology: 'JavaScript',
     link: 'https://github.com/sirvar/bluetoothkit-android'
   }
@@ -87,7 +97,7 @@ Experience.Heading = styled.h2`
   margin: 0;
 `
 
-const ExperienceView = () => (
+const ExperienceView = ({ projects }) => (
   <Experience>
     <Experience.Heading>Projects</Experience.Heading>
     {projects.map(project => (<Project {...project} key={project.name} />))}

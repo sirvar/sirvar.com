@@ -23,7 +23,7 @@ const icons = [
   },
   {
     asset: resume,
-    link: 'static/resume.pdf'
+    link: '/resume.pdf'
   },
   {
     asset: sponsor,
