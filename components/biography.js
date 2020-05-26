@@ -41,6 +41,11 @@ Biography.Highlight = styled.span`
   text-decoration: underline;
 `
 
+Biography.Link = styled.a`
+  color: white;
+  text-decoration: underline;
+`
+
 const BiographyView = () => (
   <Biography>
     <Biography.Heading>
@@ -50,7 +55,7 @@ const BiographyView = () => (
       I'm a <Biography.Highlight>Full Stack Developer</Biography.Highlight> and currently a 4th year Honours Computer Science student at the University of Windsor. 
       I've been writing code for 6+ years working with various different languages and technologies, 
       most notably; <Biography.Highlight>Java</Biography.Highlight>, <Biography.Highlight>JavaScript</Biography.Highlight>, 
-      and <Biography.Highlight>Python</Biography.Highlight>. In my free time, I enjoy travelling, video games, and music.
+      and <Biography.Highlight>Python</Biography.Highlight>. In my free time, I enjoy travelling, <Biography.Link href="https://unsplash.com/@sirvar" target="_blank">photography</Biography.Link>, video games, and music.
     </Biography.Description>
     <Contact />
   </Biography>
