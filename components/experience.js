@@ -19,7 +19,7 @@ export const projects = [
   {
     name: 'Quick Connect',
     description: 'A quick settings tile app that lets you quickly connect to a paired Bluetooth device such as a pair of headphones or a Bluetooth speaker.',
-    value: '17,000+',
+    value: '19,000+',
     icon: download,
     technology: 'Android',
     link: 'https://play.google.com/store/apps/details?id=com.sirvar.quickconnect'
@@ -48,7 +48,7 @@ const work = [
   {
     company: "Yodi",
     position: "Full Stack Developer",
-    date: "Jan 2020 - Present"
+    date: "Jan 2020 - Apr 2020"
   },
   {
     company: "Lokally",
