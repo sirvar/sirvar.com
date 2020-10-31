@@ -7,6 +7,7 @@ const Card = styled.div`
   margin: 1em 0;
   border-radius: 0.25em;
   transition: all .3s cubic-bezier(0.75, 0, 0.25, 1);
+  cursor: pointer;
   &:hover {
     transform: scale(1.075);
   }
