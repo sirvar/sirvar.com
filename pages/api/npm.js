@@ -11,12 +11,17 @@ export default async (req, res) => {
   }
 }
 
-export const npm = async (pckg) => {
-  return fetch(`https://api.npmjs.org/downloads/point/2000-01-01:${new Date().toISOString().split('T')[0]}/${pckg}`)
+export const npm = async(pckg) => {
+  return fetch(`https://npm-stat.com/api/download-counts?package=${pckg}&from=2014-01-01&until=${new Date().toISOString().split('T')[0]}`)
   .then(response => response.json())
   .then(data => {
-    const rounded = Math.floor((data.downloads / 1000)) * 1000
+    let downloads = Object.values(data[pckg])
+    const rounded = Math.floor((downloads.reduce(sum) / 1000)) * 1000
     const formatted = rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "+"
     return formatted
   })
+}
+
+function sum(total, n) {
+  return total + n
 }
