@@ -1,35 +1,40 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-const me = '/me.jpg'
-const github = '/github.svg'
-const linkedin = '/linkedin.svg'
-const email = '/email.svg'
-const resume = '/resume.svg'
-const sponsor = '/sponsor.svg'
+const me = "/me.jpg";
+const github = "/github.svg";
+const linkedin = "/linkedin.svg";
+const telegram = "/telegram.svg";
+const email = "/email.svg";
+const resume = "/resume.svg";
+const sponsor = "/sponsor.svg";
 
 const icons = [
   {
     asset: github,
-    link: 'https://github.com/sirvar'
+    link: "https://github.com/sirvar",
   },
   {
     asset: linkedin,
-    link: 'https://linkedin.com/in/sirvar'
+    link: "https://linkedin.com/in/sirvar",
+  },
+  {
+    asset: telegram,
+    link: "http://t.me/sirvar",
   },
   {
     asset: email,
-    link: 'mailto:me@sirvar.com'
+    link: "mailto:me@sirvar.com",
   },
   {
     asset: resume,
-    link: '/resume.pdf'
+    link: "/resume.pdf",
   },
   {
     asset: sponsor,
-    link: 'https://github.com/sponsors/sirvar'
+    link: "https://github.com/sponsors/sirvar",
   },
-]
+];
 
 const Contact = styled.div`
   position: fixed;
@@ -40,13 +45,13 @@ const Contact = styled.div`
     width: 100%;
     bottom: 0;
   }
-`
+`;
 
 Contact.Profile = styled.img`
   border-radius: 50%;
   width: 4em;
   height: 4em;
-`
+`;
 
 Contact.Icons = styled.div`
   float: right;
@@ -55,26 +60,28 @@ Contact.Icons = styled.div`
   align-items: center;
   width: 60%;
   height: 4em;
-`
+`;
 
 const ContactView = () => (
   <Contact>
     <Contact.Profile src={me} />
     <Contact.Icons>
-      {icons.map(icon => {
+      {icons.map((icon) => {
         const IconAsset = styled.img`
           color: white;
           width: 1.5em;
-          transition: all .3s cubic-bezier(0.75, 0, 0.25, 1);
+          transition: all 0.3s cubic-bezier(0.75, 0, 0.25, 1);
           &:hover {
             transform: scale(1.25);
           }
-        `
+        `;
         return (
-          <a href={icon.link} target='_blank' key={icon.asset}><IconAsset src={icon.asset} /></a>
-        )
+          <a href={icon.link} target="_blank" key={icon.asset}>
+            <IconAsset src={icon.asset} />
+          </a>
+        );
       })}
     </Contact.Icons>
   </Contact>
-)
-export default ContactView
+);
+export default ContactView;

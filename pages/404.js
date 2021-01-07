@@ -1,13 +1,11 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from "react";
+import Layout from "../components/layout";
 
 const NotFoundPage = () => {
   React.useEffect(() => {
-    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-  }, [])
-  return (
-    <></>
-  )
-}
+    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+  }, []);
+  return <></>;
+};
 
-export default NotFoundPage
+export default NotFoundPage;

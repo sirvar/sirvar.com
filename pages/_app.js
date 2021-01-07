@@ -1,5 +1,5 @@
 // /pages/_app.js
-import App from 'next/app';
+import App from "next/app";
 
 class MyApp extends App {
   render() {
@@ -7,20 +7,20 @@ class MyApp extends App {
     return (
       <div>
         <Component {...pageProps} />
-				<style jsx global>{`
+        <style jsx global>{`
           body {
             background-color: #151515;
-            font-family: 'Manrope', 'Helvetica', 'Arial', 'Sans Serif';
+            font-family: "Manrope", "Helvetica", "Arial", "Sans Serif";
             margin: 0;
             padding: 0;
           }
-          
+
           p {
-            color: #9C9DA1;
+            color: #9c9da1;
             font-size: 0.8rem;
             font-weight: 400;
           }
-				`}</style>
+        `}</style>
       </div>
     );
   }
