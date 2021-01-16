@@ -51,6 +51,11 @@ export const projects = [
 
 const work = [
   {
+    company: "Makeship",
+    position: "Software Developer",
+    date: "Jan 2021 - Present",
+  },
+  {
     company: "Yodi",
     position: "Full Stack Developer",
     date: "Jan 2020 - Apr 2020",
