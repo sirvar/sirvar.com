@@ -45,7 +45,7 @@ export const projects = [
     api: "npm",
     icon: download,
     technology: "JavaScript",
-    link: "https://github.com/sirvar/bluetoothkit-android",
+    link: "https://github.com/GitStartHQ/backend-proxy",
   },
 ];
 
