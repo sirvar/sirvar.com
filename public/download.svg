@@ -1,8 +1,6 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 480 480" preserveAspectRatio="xMidYMid meet">
-<g id="layer101" fill="#9c9da1" stroke="none">
- <path d="M40 420 c0 -19 7 -20 200 -20 193 0 200 1 200 20 0 19 -7 20 -200 20 -193 0 -200 -1 -200 -20z"/>
- <path d="M175 280 l-59 -60 42 0 42 0 0 -90 0 -90 40 0 40 0 0 90 0 90 42 0 42 0 -59 60 c-33 33 -62 60 -65 60 -3 0 -32 -27 -65 -60z"/>
- </g>
-
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#9c9da1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+  <polyline points="7 11 12 16 17 11" />
+  <line x1="12" y1="4" x2="12" y2="16" />
 </svg>

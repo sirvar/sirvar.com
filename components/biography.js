@@ -52,18 +52,15 @@ const BiographyView = () => (
       Hi, I'm <br></br>Rikin Katyal.
     </Biography.Heading>
     <Biography.Description>
-      I'm a <Biography.Highlight>Full Stack Developer</Biography.Highlight> and
-      currently a 4th year Honours Computer Science student at the University of
-      Windsor. I've been writing code for 6+ years working with various
+      Let me tell you a little bit about myself. I'm currently working as a {" "}
+      <Biography.Highlight>Software Developer</Biography.Highlight> @ Makeship{" "}
+      and University of Windsor Honours Computer Science graduate. 
+      I've been writing code for 7+ years working with various
       different languages and technologies, most notably;{" "}
-      <Biography.Highlight>Java</Biography.Highlight>,{" "}
-      <Biography.Highlight>JavaScript</Biography.Highlight>, and{" "}
+      <Biography.Highlight>JavaScript</Biography.Highlight>,{" "}
+      <Biography.Highlight>Java</Biography.Highlight>, and{" "}
       <Biography.Highlight>Python</Biography.Highlight>. In my free time, I
-      enjoy travelling,{" "}
-      <Biography.Link href="https://unsplash.com/@sirvar" target="_blank">
-        photography
-      </Biography.Link>
-      , video games, and music.
+      enjoy travelling, photography, video games, and music.
     </Biography.Description>
     <Contact />
   </Biography>

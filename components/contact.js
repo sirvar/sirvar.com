@@ -7,32 +7,44 @@ const linkedin = "/linkedin.svg";
 const telegram = "/telegram.svg";
 const email = "/email.svg";
 const resume = "/resume.svg";
+const camera = "/camera.svg";
 const sponsor = "/sponsor.svg";
 
 const icons = [
   {
     asset: github,
     link: "https://github.com/sirvar",
+    alt: "GitHub",
   },
   {
     asset: linkedin,
     link: "https://linkedin.com/in/sirvar",
+    alt: "LinkedIn",
   },
   {
     asset: telegram,
     link: "http://t.me/sirvar",
+    alt: "Telegram",
   },
   {
     asset: email,
     link: "mailto:me@sirvar.com",
+    alt: "Email",
   },
   {
     asset: resume,
     link: "/resume.pdf",
+    alt: "Resume",
+  },
+  {
+    asset: camera,
+    link: "https://unsplash.com/@sirvar",
+    alt: "Unsplash",
   },
   {
     asset: sponsor,
     link: "https://github.com/sponsors/sirvar",
+    alt: "Buy me a coffee",
   },
 ];
 
@@ -76,7 +88,7 @@ const ContactView = () => (
           }
         `;
         return (
-          <a href={icon.link} target="_blank" key={icon.asset}>
+          <a href={icon.link} target="_blank" key={icon.asset} title={icon.alt}>
             <IconAsset src={icon.asset} />
           </a>
         );

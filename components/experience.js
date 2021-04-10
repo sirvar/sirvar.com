@@ -21,7 +21,7 @@ export const projects = [
     name: "Quick Connect",
     description:
       "A quick settings tile app that lets you quickly connect to a paired Bluetooth device such as a pair of headphones or a Bluetooth speaker.",
-    value: "27,000+",
+    value: "31,000+",
     icon: download,
     technology: "Android",
     link:
@@ -87,6 +87,14 @@ const work = [
   },
 ];
 
+const education = [
+  {
+    company: "University of Windsor",
+    position: "Honours Computer Science",
+    date: "2017 - 2021"
+  }
+]
+
 const Experience = styled.div`
   margin-left: 40%;
   width: 60%;
@@ -115,6 +123,10 @@ const ExperienceView = ({ projects }) => (
     ))}
     <Experience.Heading>Work</Experience.Heading>
     {work.map((job) => (
+      <Work {...job} key={job.company} />
+    ))}
+    <Experience.Heading>Education</Experience.Heading>
+    {education.map((job) => (
       <Work {...job} key={job.company} />
     ))}
   </Experience>

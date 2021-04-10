@@ -1,7 +1,5 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 480 480" preserveAspectRatio="xMidYMid meet">
-<g id="layer101" fill="#ffffff" stroke="none">
- <path d="M133 414 c-62 -37 -93 -95 -93 -174 0 -123 77 -200 200 -200 123 0 200 77 200 202 0 50 -4 69 -18 81 -22 20 -83 22 -100 5 -9 -9 -15 -9 -24 0 -7 7 -33 12 -59 12 -65 0 -99 -34 -99 -100 0 -66 34 -100 100 -100 60 0 100 35 100 86 0 45 9 64 30 64 24 0 31 -26 21 -73 -19 -80 -75 -127 -151 -127 -155 0 -208 204 -73 282 18 11 61 22 102 25 60 5 71 9 71 24 0 17 -9 19 -82 19 -71 0 -89 -4 -125 -26z m145 -136 c15 -15 15 -61 0 -76 -15 -15 -61 -15 -76 0 -15 15 -15 61 0 76 15 15 61 15 76 0z"/>
- </g>
-
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-at" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="12" r="4" />
+  <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28" />
 </svg>
