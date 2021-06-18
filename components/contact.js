@@ -52,6 +52,11 @@ const Contact = styled.div`
   position: fixed;
   bottom: 5em;
   width: 35%;
+  @media (max-height: 600px) {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
   @media (max-width: 980px) {
     position: relative;
     width: 100%;
@@ -70,7 +75,7 @@ Contact.Icons = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 60%;
+  width: 70%;
   height: 4em;
 `;
 

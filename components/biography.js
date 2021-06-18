@@ -31,6 +31,7 @@ Biography.Description = styled.p`
   line-height: 2;
   margin: 2em 0;
   width: 90%;
+  font-family: "Space Mono", "monospace";
   @media (max-width: 980px) {
     width: 100%;
   }
@@ -52,11 +53,10 @@ const BiographyView = () => (
       Hi, I'm <br></br>Rikin Katyal.
     </Biography.Heading>
     <Biography.Description>
-      Let me tell you a little bit about myself. I'm currently working as a {" "}
-      <Biography.Highlight>Software Developer</Biography.Highlight> @ Makeship{" "}
-      and University of Windsor Honours Computer Science graduate. 
-      I've been writing code for 7+ years working with various
-      different languages and technologies, most notably;{" "}
+      Let me tell you a little bit about myself. I'm currently working as a{" "}
+      <Biography.Highlight>Software Developer</Biography.Highlight> @ Cover.
+      I've been writing code for 7+ years working with various different
+      languages and technologies, most notably;{" "}
       <Biography.Highlight>JavaScript</Biography.Highlight>,{" "}
       <Biography.Highlight>Java</Biography.Highlight>, and{" "}
       <Biography.Highlight>Python</Biography.Highlight>. In my free time, I

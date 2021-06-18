@@ -16,7 +16,7 @@ const IndexPage = ({ projects }) => (
       <link rel="icon" href="/favicon.ico" />
       <meta
         name="description"
-        content="Hi, I'm Rikin Katyal. I'm a Full Stack Developer and currently a 4th year Honours Computer Science student at the University of Windsor. I've been writing code for 6+ years working with various different languages and technologies, most notably; Java, JavaScript, and Python. In my free time, I enjoy travelling, video games, and music."
+        content="Let me tell you a little bit about myself. I'm currently working as a Software Developer @ Cover. I've been writing code for 7+ years working with various different languages and technologies, most notably; JavaScript, Java, and Python. In my free time, I enjoy travelling, photography, video games, and music."
       ></meta>
     </Head>
     <Biography />
@@ -24,7 +24,7 @@ const IndexPage = ({ projects }) => (
   </Layout>
 );
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   await Promise.all(
     projects.map(async (project) => {
       let value = project.value;
@@ -42,6 +42,7 @@ export async function getServerSideProps() {
     props: {
       projects,
     }, // will be passed to the page component as props
+    revalidate: 60,
   };
 }
 
