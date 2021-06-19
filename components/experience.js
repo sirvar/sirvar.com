@@ -21,11 +21,10 @@ export const projects = [
     name: "Quick Connect",
     description:
       "A quick settings tile app that lets you quickly connect to a paired Bluetooth device such as a pair of headphones or a Bluetooth speaker.",
-    value: "31,000+",
+    value: "34,000+",
     icon: download,
     technology: "Android",
-    link:
-      "https://play.google.com/store/apps/details?id=com.sirvar.quickconnect",
+    link: "https://play.google.com/store/apps/details?id=com.sirvar.quickconnect",
   },
   {
     name: "robin",
@@ -51,9 +50,14 @@ export const projects = [
 
 const work = [
   {
+    company: "Cover",
+    position: "Software Developer",
+    date: "June 2021 - Present",
+  },
+  {
     company: "Makeship",
     position: "Software Developer",
-    date: "Jan 2021 - Present",
+    date: "Jan 2021 - June 2021",
   },
   {
     company: "Yodi",
@@ -91,9 +95,9 @@ const education = [
   {
     company: "University of Windsor",
     position: "Honours Computer Science",
-    date: "2017 - 2021"
-  }
-]
+    date: "2017 - 2021",
+  },
+];
 
 const Experience = styled.div`
   margin-left: 40%;
@@ -110,7 +114,7 @@ const Experience = styled.div`
 
 Experience.Heading = styled.h2`
   color: white;
-  font-family: "Poppins", "Helvetica", "Arial", "Sans Serif";
+  font-family: "Space Mono", "monospace";
   font-size: 2rem;
   margin: 0;
 `;

@@ -16,7 +16,7 @@ Card.Title = styled.h3`
   color: white;
   font-size: 1.5rem;
   margin: 0.25em 0;
-  font-family: "Poppins", "Helvetica", "Arial", "Sans Serif";
+  font-family: "Space Mono", "monospace";
 `;
 
 Card.Tag = styled.h6`
@@ -24,13 +24,15 @@ Card.Tag = styled.h6`
   text-transform: uppercase;
   color: white;
   letter-spacing: 0.05rem;
-  font-family: "Manrope";
+  /* font-family: "Manrope"; */
+  font-family: "Space Mono", "monospace";
 `;
 
 Card.SubTitle = styled.h4`
   color: #9c9da1;
   font-size: 0.9rem;
   margin: 0;
+  font-family: "Space Mono", "monospace";
 `;
 Card.Description = styled.p``;
 

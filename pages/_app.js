@@ -10,7 +10,7 @@ class MyApp extends App {
         <style jsx global>{`
           body {
             background-color: #151515;
-            font-family: "Manrope", "Helvetica", "Arial", "Sans Serif";
+            font-family: "Space Mono", "monospace";
             margin: 0;
             padding: 0;
           }
