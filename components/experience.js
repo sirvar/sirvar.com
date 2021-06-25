@@ -52,12 +52,12 @@ const work = [
   {
     company: "Cover",
     position: "Software Developer",
-    date: "June 2021 - Present",
+    date: "Jun 2021 - Present",
   },
   {
     company: "Makeship",
     position: "Software Developer",
-    date: "Jan 2021 - June 2021",
+    date: "Jan 2021 - Jun 2021",
   },
   {
     company: "Yodi",
