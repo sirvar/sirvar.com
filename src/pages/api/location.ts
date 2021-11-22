@@ -4,6 +4,7 @@ import { setLocation } from '@/services/location';
 
 type Request = {
   location: string;
+  secret: string;
 };
 
 type Response = {
@@ -16,7 +17,12 @@ export default function handler(
   res: NextApiResponse<Response>,
 ) {
   if (req.method === `POST`) {
-    const { location } = req.body as Request;
+    const { location, secret } = req.body as Request;
+
+    if (secret !== process.env.API_SECRET) {
+      res.status(401).end();
+      return;
+    }
 
     try {
       setLocation(location);

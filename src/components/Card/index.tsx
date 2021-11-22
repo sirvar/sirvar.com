@@ -25,7 +25,7 @@ const Value = styled(H3)<{ fontSize: number }>`
 
 type CardProps = {
   title: string;
-  value: string;
+  value: string | number;
   href?: string;
   tooltip?: string;
 };
@@ -33,7 +33,7 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ title, value, href, tooltip }) => (
   <Wrapper data-tip={tooltip}>
     <H5>{title}</H5>
-    <Value fontSize={1.5 + 2.5 / value.length}>{value}</Value>
+    <Value fontSize={1.25 + 2.5 / value.toString().length}>{value}</Value>
     <ReactTooltip />
   </Wrapper>
 );
