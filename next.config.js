@@ -1,6 +1,9 @@
 module.exports = {
   reactStrictMode: true,
-  styledComponents: true,
+  experimental: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
