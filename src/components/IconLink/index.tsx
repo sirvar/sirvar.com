@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -10,19 +9,6 @@ import { ThemeName } from '@/styles/theme';
 const Text = styled(H4)<{ color: string }>`
   color: ${({ color }) => color};
   margin-left: 0.5rem;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  width: 100%;
-  max-width: 128px;
-  max-height: 32px;
-  border-radius: 4px;
-  background: ${({ theme }) => theme.backgroundSecondary};
-  padding: ${({ theme }) => theme.name === ThemeName.Dark && `8px`};
 `;
 
 const ArrowLink = styled(_ArrowLink)<{ color: string }>`

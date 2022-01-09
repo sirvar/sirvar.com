@@ -17,7 +17,7 @@ const Header: React.FC = () => {
   return (
     <Wrapper>
       <Name>Rikin Katyal</Name>
-      <Title>Software Engineer</Title>
+      <Title>Software Developer</Title>
     </Wrapper>
   );
 };

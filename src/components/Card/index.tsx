@@ -54,11 +54,10 @@ type CardProps = {
   title: string;
   value: string | number;
   Icon?: React.ComponentType;
-  href?: string;
   tooltip?: string;
 };
 
-const Card: React.FC<CardProps> = ({ title, value, Icon, href, tooltip }) => (
+const Card: React.FC<CardProps> = ({ title, value, Icon, tooltip }) => (
   <Wrapper data-tip={tooltip} data-for={title}>
     <Header>
       <Title>{title}</Title>

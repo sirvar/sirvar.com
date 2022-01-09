@@ -21,7 +21,7 @@ export default function Home({ locationData }: PageProps) {
   return (
     <Page
       title="Rikin Katyal"
-      description="Portfolio"
+      description="Front-end software developer from Canada"
       location={locationData.location}
     >
       <Section>
@@ -41,10 +41,10 @@ export default function Home({ locationData }: PageProps) {
         <H3>Projects</H3>
         <Projects />
       </Section>
-      <Section>
+      {/* <Section>
         <H3>Recent Posts</H3>
         <List items={work} />
-      </Section>
+      </Section> */}
     </Page>
   );
 }
