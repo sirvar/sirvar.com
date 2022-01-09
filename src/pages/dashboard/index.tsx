@@ -1,29 +1,30 @@
 import { GetStaticProps } from 'next';
+import React from 'react';
 
-import Card from '@/components/Card';
+import ArrowLink from '@/components/ArrowLink';
 import { GitHubChart } from '@/components/GitHubChart';
+import GitHubRow from '@/components/GitHubRow';
 import Page from '@/components/Page';
-import Row from '@/components/Row';
 import Section from '@/components/Section';
 import TravelRow from '@/components/TravelRow';
 import { H2 } from '@/components/Typography';
-import Camera from '@/public/icons/camera.svg';
-import Download from '@/public/icons/download.svg';
-import Eye from '@/public/icons/eye.svg';
+import UnsplashRow from '@/components/UnsplashRow';
+import { getRepos, getUser } from '@/services/github';
 import { getLocation } from '@/services/location';
 import { getTravel } from '@/services/travel';
 import { getProfile, getStatistics } from '@/services/unsplash';
-import format from '@/utils/format';
 
 interface DashboardProps extends PageProps {
+  githubData: GitHubData;
   travelData: TravelData;
-  unsplash: UnsplashData;
+  unsplashData: UnsplashData;
 }
 
 export default function Dashboard({
+  githubData,
   locationData,
   travelData,
-  unsplash,
+  unsplashData,
 }: DashboardProps) {
   return (
     <Page
@@ -32,32 +33,22 @@ export default function Dashboard({
       location={locationData.location}
     >
       <Section>
-        <H2>Travel</H2>
+        <ArrowLink href="/dashboard/travel" target="">
+          <H2>Travel</H2>
+        </ArrowLink>
         <TravelRow locationData={locationData} travelData={travelData} />
       </Section>
       <Section>
-        <H2>Unsplash</H2>
-        <Row>
-          <Card
-            title="Total Views"
-            value={format(unsplash.views.total)}
-            Icon={Eye}
-          />
-          <Card
-            title="Total Downloads"
-            value={format(unsplash.downloads.total)}
-            Icon={Download}
-          />
-          <Card
-            title="Total Photos"
-            value={format(unsplash.total_photos)}
-            Icon={Camera}
-          />
-        </Row>
+        <ArrowLink href="https://unsplash.com/@sirvar">
+          <H2>Unsplash</H2>
+        </ArrowLink>
+        <UnsplashRow unsplashData={unsplashData} />
       </Section>
       <Section>
-        <H2>GitHub</H2>
-        <br />
+        <ArrowLink href="https://github.com/sirvar">
+          <H2>GitHub</H2>
+        </ArrowLink>
+        <GitHubRow githubData={githubData} />
         <GitHubChart />
       </Section>
     </Page>
@@ -69,12 +60,18 @@ export const getStaticProps: GetStaticProps = async () => {
   const travelData = getTravel();
   const statistics = await getStatistics();
   const profile = await getProfile();
+  const githubUser = await getUser();
+  const githubRepos = await getRepos();
 
   return {
     props: {
+      githubData: {
+        user: githubUser,
+        repos: githubRepos,
+      },
       locationData,
       travelData,
-      unsplash: {
+      unsplashData: {
         ...statistics,
         total_photos: profile.total_photos,
       },

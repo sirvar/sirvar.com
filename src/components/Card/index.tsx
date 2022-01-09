@@ -9,12 +9,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 192px;
+  min-width: 144px;
+  width: 100%;
   height: 96px;
   border-radius: 4px;
   background-color: ${({ theme }) => theme.background};
   padding: 16px;
   margin: 16px 0;
+  flex: 1 0 20%;
   margin-right: 16px;
   border: 1px solid ${({ theme }) => theme.secondary}55;
 `;
@@ -57,14 +59,14 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = ({ title, value, Icon, href, tooltip }) => (
-  <Wrapper data-tip={tooltip}>
+  <Wrapper data-tip={tooltip} data-for={title}>
     <Header>
       <Title>{title}</Title>
       {Icon && <Icon />}
     </Header>
     <Value textLength={value.toString().length}>{value}</Value>
     <NoSsr>
-      <ReactTooltip effect="solid" />
+      <ReactTooltip id={title} effect="solid" />
     </NoSsr>
   </Wrapper>
 );

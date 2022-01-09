@@ -27,6 +27,7 @@ export default function handler(
 
     try {
       setLocation(location);
+      console.log(`Location Updated:`, location);
       res.status(200).json({ success: true });
     } catch (err) {
       res.status(500).json({ success: false, error: err });

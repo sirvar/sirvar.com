@@ -36,5 +36,6 @@ export const H5 = styled.h5`
 export const P = styled.p`
   font-family: ${({ theme }) => theme.fonts.primary};
   margin: 0;
+  max-width: 640px;
   color: ${({ theme }) => theme.textPrimary};
 `;

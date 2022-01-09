@@ -1,3 +1,17 @@
+type GitHubUser = {
+  followers: number;
+  public_repos: number;
+};
+
+type GitHubRepo = {
+  stargazers_count: number;
+};
+
+type GitHubData = {
+  user: GitHubUser;
+  repos: GitHubRepo[];
+};
+
 type LocationData = {
   location: string;
   date: string;
@@ -17,6 +31,7 @@ type UnsplashData = {
     total: number;
   };
 };
+
 interface PageProps {
   locationData: LocationData;
 }

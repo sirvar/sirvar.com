@@ -14,7 +14,7 @@ export const GitHubChart: React.FC = () => {
       hideMonthLabels
       hideTotalCount
     >
-      {/* <ReactTooltip html /> */}
+      <ReactTooltip effect="solid" html />
     </GitHubCalendar>
   );
 };

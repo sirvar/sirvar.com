@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 import List from '@/components/List';
 import Page from '@/components/Page';
 import Projects from '@/components/Projects';
@@ -7,10 +5,6 @@ import Section from '@/components/Section';
 import SocialRow from '@/components/SocialRow';
 import { H3, P } from '@/components/Typography';
 import { getLocation } from '@/services/location';
-
-const Paragraph = styled(P)`
-  max-width: 640px;
-`;
 
 const work = [
   {
@@ -31,13 +25,13 @@ export default function Home({ locationData }: PageProps) {
       location={locationData.location}
     >
       <Section>
-        <Paragraph>
+        <P>
           I&apos;m currently working as a Software Developer at Cover, leading
           frontend projects using React &amp; Next.js. In my free time I like to
           travel, read, and play video games.
-        </Paragraph>
+        </P>
         <br />
-        <Paragraph>Feel free to connect with me below.</Paragraph>
+        <P>Feel free to connect with me below.</P>
       </Section>
       <Section>
         <H3>Social</H3>

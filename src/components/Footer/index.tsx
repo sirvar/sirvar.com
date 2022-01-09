@@ -54,6 +54,11 @@ const footerLinks = [
     href: `/dashboard`,
   },
   {
+    title: `Resume`,
+    href: `/resume.pdf`,
+    target: `_blank`,
+  },
+  {
     title: `Blog`,
     href: `https://blog.sirvar.com`,
   },
@@ -69,9 +74,11 @@ const Footer: React.FC<FooterProps> = ({ location }) => {
   return (
     <Wrapper>
       <NavRow>
-        {footerLinks.map(({ title, href }) => (
+        {footerLinks.map(({ title, href, target = `` }) => (
           <Link key={title} href={href} passHref>
-            <NavItem as="a">{title}</NavItem>
+            <NavItem as="a" target={target}>
+              {title}
+            </NavItem>
           </Link>
         ))}
       </NavRow>

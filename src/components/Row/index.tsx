@@ -5,7 +5,8 @@ const Row = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 100%;
+  flex-wrap: wrap;
+  width: calc(100% + 16px);
 `;
 
 export default Row;
