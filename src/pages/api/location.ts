@@ -2,11 +2,6 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { setLocation } from '@/services/location';
 
-type Request = {
-  location: string;
-  secret: string;
-};
-
 type Response = {
   success: boolean;
   error?: any;
@@ -17,10 +12,16 @@ export default function handler(
   res: NextApiResponse<Response>,
 ) {
   if (req.method === `POST`) {
-    const { location, secret } = req.body as Request;
+    const { authorization } = req.headers;
+    const { location } = JSON.parse(JSON.stringify(req.body));
 
-    if (secret !== process.env.API_SECRET) {
+    if (authorization !== process.env.API_SECRET) {
       res.status(401).end();
+      return;
+    }
+
+    if (!location) {
+      res.status(400).end();
       return;
     }
 
