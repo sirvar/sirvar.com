@@ -1,21 +1,9 @@
-import List from '@/components/List';
 import Page from '@/components/Page';
 import Projects from '@/components/Projects';
 import Section from '@/components/Section';
 import SocialRow from '@/components/SocialRow';
 import { H3, P } from '@/components/Typography';
 import { getLocation } from '@/services/location';
-
-const work = [
-  {
-    title: `Blog post 1`,
-    href: `https://sirvar.com`,
-  },
-  {
-    title: `Blog post 2`,
-    href: `https://sirvar.com`,
-  },
-];
 
 export default function Home({ locationData }: PageProps) {
   return (
@@ -41,10 +29,6 @@ export default function Home({ locationData }: PageProps) {
         <H3>Projects</H3>
         <Projects />
       </Section>
-      {/* <Section>
-        <H3>Recent Posts</H3>
-        <List items={work} />
-      </Section> */}
     </Page>
   );
 }
