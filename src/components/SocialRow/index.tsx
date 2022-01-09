@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import _IconLink from '@/components/IconLink';
-import { H1, H3, H4 } from '@/components/Typography';
 
 const Row = styled.div`
   display: flex;
   justify-content: flex-start;
-  margin-top: 16px;
+  flex-wrap: wrap;
 `;
 
 const IconLink = styled(_IconLink)`
+  margin-top: 16px;
   margin-right: 1.5em;
 `;
 

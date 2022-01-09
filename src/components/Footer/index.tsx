@@ -49,14 +49,10 @@ const footerLinks = [
     title: `About`,
     href: `/`,
   },
-  // {
-  //   title: `Work`,
-  //   href: `/work`,
-  // },
-  // {
-  //   title: `Dashboard`,
-  //   href: `/dashboard`,
-  // },
+  {
+    title: `Dashboard`,
+    href: `/dashboard`,
+  },
   {
     title: `Blog`,
     href: `https://blog.sirvar.com`,

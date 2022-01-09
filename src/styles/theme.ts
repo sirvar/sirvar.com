@@ -28,7 +28,7 @@ export const theme: Theme = {
   backgroundSecondary: `transparent`,
   textPrimary: `#104455`,
   fonts: {
-    primary: `Soehne`,
+    primary: `GTWalsheimPro`,
     secondary: `GTWalsheimPro`,
   },
 };
@@ -43,7 +43,7 @@ export const darkTheme: Theme = {
   backgroundSecondary: `#f9fafb`,
   textPrimary: `#FFFFFF`,
   fonts: {
-    primary: `Soehne`,
+    primary: `GTWalsheimPro`,
     secondary: `GTWalsheimPro`,
   },
 };

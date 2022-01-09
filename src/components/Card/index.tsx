@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { H3, H5 } from '@/components/Typography';
 
+import NoSsr from '../NoSsr';
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,27 +16,56 @@ const Wrapper = styled.div`
   padding: 16px;
   margin: 16px 0;
   margin-right: 16px;
-  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid ${({ theme }) => theme.secondary}55;
 `;
 
-const Value = styled(H3)<{ fontSize: number }>`
-  font-size: ${({ fontSize }) => `${fontSize}rem`};
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    path,
+    circle {
+      stroke: ${({ theme }) => theme.primary}DD;
+    }
+  }
+`;
+
+const Title = styled(H5)`
+  color: ${({ theme }) => theme.primary}DD;
+`;
+
+const Value = styled(H3)<{ textLength: number }>`
+  font-size: min(
+    ${({ textLength }) => 8 / Math.min(6, textLength / 2)}rem,
+    3.5rem
+  );
+  line-height: min(
+    ${({ textLength }) => 8 / Math.min(6, textLength / 2)}rem,
+    2.75rem
+  );
   margin: 0;
 `;
 
 type CardProps = {
   title: string;
   value: string | number;
+  Icon?: React.ComponentType;
   href?: string;
   tooltip?: string;
 };
 
-const Card: React.FC<CardProps> = ({ title, value, href, tooltip }) => (
+const Card: React.FC<CardProps> = ({ title, value, Icon, href, tooltip }) => (
   <Wrapper data-tip={tooltip}>
-    <H5>{title}</H5>
-    <Value fontSize={1.25 + 2.5 / value.toString().length}>{value}</Value>
-    <ReactTooltip />
+    <Header>
+      <Title>{title}</Title>
+      {Icon && <Icon />}
+    </Header>
+    <Value textLength={value.toString().length}>{value}</Value>
+    <NoSsr>
+      <ReactTooltip effect="solid" />
+    </NoSsr>
   </Wrapper>
 );
 

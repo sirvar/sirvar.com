@@ -3,6 +3,11 @@ type LocationData = {
   date: string;
 };
 
+type TravelData = {
+  distance: number;
+  countries: string[];
+};
+
 type UnsplashData = {
   total_photos: number;
   downloads: {
@@ -12,3 +17,6 @@ type UnsplashData = {
     total: number;
   };
 };
+interface PageProps {
+  locationData: LocationData;
+}

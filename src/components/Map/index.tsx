@@ -12,7 +12,11 @@ type MapProps = {
 const MapChart: React.FC<MapProps> = ({ setTooltipContent }: MapProps) => {
   return (
     <>
-      <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
+      <ComposableMap
+        projection="geoMercator"
+        data-tip=""
+        projectionConfig={{ scale: 135, center: [0, 40] }}
+      >
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map((geo) => {

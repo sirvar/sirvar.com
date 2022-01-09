@@ -4,6 +4,7 @@ import ReactTooltip from 'react-tooltip';
 import Map from '@/components/Map';
 import NoSsr from '@/components/NoSsr';
 import Page from '@/components/Page';
+import Section from '@/components/Section';
 import { H2 } from '@/components/Typography';
 
 export default function Travel() {
@@ -14,11 +15,13 @@ export default function Travel() {
       description="A centralized dashboard with different metrics and charts"
       location="Test"
     >
-      <H2>Travel</H2>
-      <Map setTooltipContent={setContent} />
-      <NoSsr>
-        <ReactTooltip>{content}</ReactTooltip>
-      </NoSsr>
+      <Section>
+        <H2>Travel</H2>
+        <Map setTooltipContent={setContent} />
+        <NoSsr>
+          <ReactTooltip>{content}</ReactTooltip>
+        </NoSsr>
+      </Section>
     </Page>
   );
 }

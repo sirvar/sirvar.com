@@ -3,13 +3,10 @@ import styled from 'styled-components';
 import List from '@/components/List';
 import Page from '@/components/Page';
 import Projects from '@/components/Projects';
+import Section from '@/components/Section';
 import SocialRow from '@/components/SocialRow';
 import { H3, P } from '@/components/Typography';
 import { getLocation } from '@/services/location';
-
-const Section = styled.div`
-  margin-top: 36px;
-`;
 
 const Paragraph = styled(P)`
   max-width: 640px;
@@ -26,11 +23,7 @@ const work = [
   },
 ];
 
-type Props = {
-  locationData: LocationData;
-};
-
-export default function Home({ locationData }: Props) {
+export default function Home({ locationData }: PageProps) {
   return (
     <Page
       title="Rikin Katyal"

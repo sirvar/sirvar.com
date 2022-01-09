@@ -4,61 +4,76 @@ import Card from '@/components/Card';
 import { GitHubChart } from '@/components/GitHubChart';
 import Page from '@/components/Page';
 import Row from '@/components/Row';
+import Section from '@/components/Section';
+import TravelRow from '@/components/TravelRow';
 import { H2 } from '@/components/Typography';
+import Camera from '@/public/icons/camera.svg';
+import Download from '@/public/icons/download.svg';
+import Eye from '@/public/icons/eye.svg';
 import { getLocation } from '@/services/location';
+import { getTravel } from '@/services/travel';
 import { getProfile, getStatistics } from '@/services/unsplash';
+import format from '@/utils/format';
 
-import countries from '../../data/countries.json';
-
-type DashboardProps = {
-  locationData: LocationData;
+interface DashboardProps extends PageProps {
+  travelData: TravelData;
   unsplash: UnsplashData;
-};
+}
 
-const numberFormat = new Intl.NumberFormat(`en-US`);
-
-export default function Dashboard({ locationData, unsplash }: DashboardProps) {
+export default function Dashboard({
+  locationData,
+  travelData,
+  unsplash,
+}: DashboardProps) {
   return (
     <Page
       title="Dashboard"
       description="A centralized dashboard with different metrics and charts"
       location={locationData.location}
     >
-      <H2>Travel</H2>
-      <Row>
-        <Card title="Currently In" value={locationData.location} />
-        <Card title="Countries Visited" value={countries.length} />
-        <Card title="Distance Travelled" value="176,302 km" />
-      </Row>
-      <H2>Unsplash</H2>
-      <Row>
-        <Card
-          title="Total Views"
-          value={numberFormat.format(unsplash.views.total)}
-        />
-        <Card
-          title="Total Downloads"
-          value={numberFormat.format(unsplash.downloads.total)}
-        />
-        <Card
-          title="Total Photos"
-          value={numberFormat.format(unsplash.total_photos)}
-        />
-      </Row>
-      <H2>GitHub</H2>
-      <GitHubChart />
+      <Section>
+        <H2>Travel</H2>
+        <TravelRow locationData={locationData} travelData={travelData} />
+      </Section>
+      <Section>
+        <H2>Unsplash</H2>
+        <Row>
+          <Card
+            title="Total Views"
+            value={format(unsplash.views.total)}
+            Icon={Eye}
+          />
+          <Card
+            title="Total Downloads"
+            value={format(unsplash.downloads.total)}
+            Icon={Download}
+          />
+          <Card
+            title="Total Photos"
+            value={format(unsplash.total_photos)}
+            Icon={Camera}
+          />
+        </Row>
+      </Section>
+      <Section>
+        <H2>GitHub</H2>
+        <br />
+        <GitHubChart />
+      </Section>
     </Page>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const locationData = getLocation();
+  const travelData = getTravel();
   const statistics = await getStatistics();
   const profile = await getProfile();
 
   return {
     props: {
       locationData,
+      travelData,
       unsplash: {
         ...statistics,
         total_photos: profile.total_photos,
