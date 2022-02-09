@@ -14,7 +14,6 @@ type GitHubData = {
 
 type LocationData = {
   location: string;
-  date: string;
 };
 
 type TravelData = {

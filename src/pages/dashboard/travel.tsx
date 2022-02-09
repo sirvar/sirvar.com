@@ -49,8 +49,8 @@ export default function Travel({ locationData, travelData }: TravelProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const locationData = getLocation();
-  const travelData = getTravel();
+  const locationData = await getLocation();
+  const travelData = await getTravel();
 
   return {
     props: {
