@@ -56,8 +56,8 @@ export default function Dashboard({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const locationData = getLocation();
-  const travelData = getTravel();
+  const locationData = await getLocation();
+  const travelData = await getTravel();
   const statistics = await getStatistics();
   const profile = await getProfile();
   const githubUser = await getUser();

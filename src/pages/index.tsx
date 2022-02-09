@@ -37,7 +37,7 @@ export async function getStaticProps() {
   return {
     revalidate: 21600,
     props: {
-      locationData: getLocation(),
+      locationData: await getLocation(),
     },
   };
 }

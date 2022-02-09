@@ -1,10 +1,21 @@
-import fs from 'fs';
+import axios from 'axios';
 
-const LOCATION_FILE = `./src/data/location.json`;
-
-export const getLocation = (): LocationData => {
+export const getLocation = async (): Promise<LocationData> => {
   try {
-    return JSON.parse(fs.readFileSync(LOCATION_FILE, `utf-8`)) as LocationData;
+    const {
+      data: { result: location },
+    } = await axios.get(
+      `https://us1-one-chipmunk-35928.upstash.io/get/location`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.UPSTASH_TOKEN}`,
+        },
+      },
+    );
+
+    return {
+      location,
+    };
   } catch (err: any) {
     throw new Error(err);
   }
@@ -12,12 +23,13 @@ export const getLocation = (): LocationData => {
 
 export const setLocation = (location: any) => {
   try {
-    fs.writeFileSync(
-      LOCATION_FILE,
-      JSON.stringify({
-        location,
-        date: new Date().toISOString(),
-      }),
+    axios.get(
+      `https://us1-one-chipmunk-35928.upstash.io/set/location/${location}`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.UPSTASH_TOKEN}`,
+        },
+      },
     );
   } catch (err: any) {
     throw new Error(err);
