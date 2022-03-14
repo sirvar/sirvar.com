@@ -35,7 +35,7 @@ export default function Home({ locationData }: PageProps) {
 
 export async function getStaticProps() {
   return {
-    revalidate: 21600,
+    revalidate: 300,
     props: {
       locationData: await getLocation(),
     },
