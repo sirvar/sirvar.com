@@ -44,6 +44,12 @@ const Heading = styled(H4)`
 
 const Location = styled(Heading)``;
 
+const HomeLocation = styled.span`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 const footerLinks = [
   {
     title: `About`,
@@ -90,11 +96,11 @@ const Footer: React.FC<FooterProps> = ({ location }) => {
         </Heading>
         <Location>
           {homeLocation !== location && (
-            <>
+            <HomeLocation>
               <Home />
               {` `}
               {homeLocation} &mdash;
-            </>
+            </HomeLocation>
           )}
           {` `}
           <Pin />
