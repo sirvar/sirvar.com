@@ -66,7 +66,7 @@ const footerLinks = [
   },
   {
     title: `Blog`,
-    href: `https://blog.sirvar.com`,
+    href: `https://sirvar.substack.com`,
   },
 ];
 
