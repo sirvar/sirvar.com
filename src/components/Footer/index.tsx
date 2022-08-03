@@ -31,6 +31,10 @@ const NavItem = styled(H5)`
 const Heading = styled(H4)`
   font-weight: 400;
   margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
 
   & > svg {
     margin-bottom: -2px !important;
@@ -45,6 +49,10 @@ const Heading = styled(H4)`
 const Location = styled(Heading)``;
 
 const HomeLocation = styled.span`
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+
   @media (max-width: 768px) {
     display: none;
   }
