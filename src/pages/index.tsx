@@ -3,7 +3,7 @@ import Projects from '@/components/Projects';
 import Section from '@/components/Section';
 import SocialRow from '@/components/SocialRow';
 import { H3, P } from '@/components/Typography';
-import { getLocation } from '@/services/location';
+import { getLocation } from '@/services/travel';
 
 export default function Home({ locationData }: PageProps) {
   return (
@@ -14,9 +14,9 @@ export default function Home({ locationData }: PageProps) {
     >
       <Section>
         <P>
-          I&apos;m currently working as a Senior Software Engineer at Utopia
-          Labs, working on web3 projects with React &amp; Next.js. In my free
-          time I like to travel, read, and play video games.
+          I&apos;m currently working as a Software Engineer at Utopia Labs,
+          working on web3 projects with React &amp; Next.js. In my free time I
+          like to travel, read, and play video games.
         </P>
         <br />
         <P>Feel free to connect with me below.</P>

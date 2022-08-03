@@ -10,8 +10,7 @@ import TravelRow from '@/components/TravelRow';
 import { H2 } from '@/components/Typography';
 import UnsplashRow from '@/components/UnsplashRow';
 import { getRepos, getUser } from '@/services/github';
-import { getLocation } from '@/services/location';
-import { getTravel } from '@/services/travel';
+import { getLocation, getTravel } from '@/services/travel';
 import { getProfile, getStatistics } from '@/services/unsplash';
 
 interface DashboardProps extends PageProps {

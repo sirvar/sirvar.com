@@ -1,63 +1,88 @@
 import axios from 'axios';
 
+import { supabaseClient } from './supabase';
+
 export const getTravel = async (): Promise<TravelData> => {
   try {
-    const {
-      data: { result: distance },
-    } = await axios.get(
-      `https://us1-one-chipmunk-35928.upstash.io/get/distance`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.UPSTASH_TOKEN}`,
-        },
-      },
-    );
+    const distance = await supabaseClient
+      ?.from(`distance`)
+      .select(`distance`)
+      .order(`created_at`, { ascending: false })
+      .limit(1);
 
-    const {
-      data: { result: countries },
-    } = await axios.get(
-      `https://us1-one-chipmunk-35928.upstash.io/smembers/countries`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.UPSTASH_TOKEN}`,
-        },
-      },
-    );
+    const countries = await supabaseClient?.from(`countries`).select(`country`);
+
+    if (distance?.data || countries?.data) {
+      return {
+        distance: distance?.data?.[0]?.distance,
+        countries: countries?.data?.map((country) => country.country) || [],
+      };
+    }
 
     return {
-      distance,
-      countries,
+      distance: 0,
+      countries: [],
     };
   } catch (err: any) {
     throw new Error(err);
   }
 };
 
-export const setDistance = (distance: number) => {
+export const setDistance = async (distance: number) => {
   try {
-    axios.get(
-      `https://us1-one-chipmunk-35928.upstash.io/set/distance/${distance}`,
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.UPSTASH_TOKEN}`,
-        },
-      },
-    );
+    await supabaseClient?.from(`distance`).insert({
+      distance,
+    });
   } catch (err: any) {
     throw new Error(err);
   }
 };
 
-export const setCountries = (country: string) => {
+export const setCountries = async (country: string) => {
   try {
-    axios.get(
-      `https://us1-one-chipmunk-35928.upstash.io/sadd/countries/${country}`,
+    await supabaseClient?.from(`countries`).insert({
+      country,
+    });
+  } catch (err: any) {
+    throw new Error(err);
+  }
+};
+
+export const getLocation = async (): Promise<LocationData> => {
+  try {
+    const location = await supabaseClient
+      ?.from(`location`)
+      .select()
+      .order(`created_at`, { ascending: false })
+      .limit(1);
+
+    return {
+      location: location?.data?.[0]?.current || `Windsor, ON, Canada`,
+      latitude: location?.data?.[0]?.latitude,
+      longitude: location?.data?.[0]?.longitude,
+    };
+  } catch (err: any) {
+    throw new Error(err);
+  }
+};
+
+export const setLocation = async (current: any) => {
+  try {
+    const { data: coords } = await axios.get(
+      `${process.env.POSITIONSTACK_URL}/forward`,
       {
-        headers: {
-          Authorization: `Bearer ${process.env.UPSTASH_TOKEN}`,
+        params: {
+          access_key: process.env.POSITIONSTACK_API_KEY,
+          query: current,
         },
       },
     );
+    const { latitude, longitude } = coords.data?.[0];
+    await supabaseClient?.from(`location`).insert({
+      current,
+      latitude,
+      longitude,
+    });
   } catch (err: any) {
     throw new Error(err);
   }
