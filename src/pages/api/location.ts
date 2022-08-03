@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { setLocation } from '@/services/location';
+import { setLocation } from '@/services/travel';
 
 type Response = {
   success: boolean;

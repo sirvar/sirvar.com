@@ -3,7 +3,7 @@ import Projects from '@/components/Projects';
 import Section from '@/components/Section';
 import SocialRow from '@/components/SocialRow';
 import { H3, P } from '@/components/Typography';
-import { getLocation } from '@/services/location';
+import { getLocation } from '@/services/travel';
 
 export default function Home({ locationData }: PageProps) {
   return (

@@ -8,8 +8,7 @@ import Page from '@/components/Page';
 import Section from '@/components/Section';
 import TravelRow from '@/components/TravelRow';
 import { H2, P } from '@/components/Typography';
-import { getLocation } from '@/services/location';
-import { getTravel } from '@/services/travel';
+import { getLocation, getTravel } from '@/services/travel';
 
 interface TravelProps extends PageProps {
   travelData: TravelData;
@@ -38,6 +37,7 @@ export default function Travel({ locationData, travelData }: TravelProps) {
           dataFor="travel-map"
           setTooltipContent={setContent}
           countries={travelData.countries}
+          locationData={locationData}
         />
         <TravelRow locationData={locationData} travelData={travelData} />
         <NoSsr>
