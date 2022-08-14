@@ -31,7 +31,7 @@
     "@types/react-simple-maps": "1.0.7",
     "@types/styled-components": "5.1.15",
     "axios": "0.24.0",
-    "next": "12.1.0",
+    "next": "12.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-github-calendar": "3.1.3",

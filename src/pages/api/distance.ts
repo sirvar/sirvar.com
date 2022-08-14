@@ -7,7 +7,7 @@ type Response = {
   error?: any;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Response>,
 ) {
@@ -26,10 +26,11 @@ export default function handler(
     }
 
     try {
-      setDistance(distance);
+      await setDistance(distance);
       console.log(`Distance Updated:`, distance);
       res.status(200).json({ success: true });
     } catch (err) {
+      console.log(`Failed to update distance:`, err);
       res.status(500).json({ success: false, error: err });
     }
   }

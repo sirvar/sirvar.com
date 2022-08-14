@@ -7,7 +7,7 @@ type Response = {
   error?: any;
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Response>,
 ) {
@@ -26,10 +26,11 @@ export default function handler(
     }
 
     try {
-      setLocation(location);
+      await setLocation(location);
       console.log(`Location Updated:`, location);
       res.status(200).json({ success: true });
     } catch (err) {
+      console.log(`Failed to update location:`, err);
       res.status(500).json({ success: false, error: err });
     }
   }
