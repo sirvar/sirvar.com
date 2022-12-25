@@ -16,7 +16,7 @@ module.exports = {
     return [
       {
         source: '/blog',
-        destination: 'https://sirvar.substack.com/?utm_source=sirvar',
+        destination: 'https://sirvar.substack.com',
       },
     ]
   },
