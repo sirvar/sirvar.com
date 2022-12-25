@@ -12,4 +12,12 @@ module.exports = {
 
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: '/blog',
+        destination: 'https://sirvar.substack.com/?utm_source=sirvar',
+      },
+    ]
+  },
 };
