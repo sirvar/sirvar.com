@@ -1,10 +1,11 @@
 import BlogPost from "@/app/_components/blog";
 import Experience from "@/app/_components/experience";
 import Icon from "@/app/_components/icon";
+import { get } from "@vercel/edge-config";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
-export default function Home() {
-  const countries = 25;
+export default async function Home() {
+  const locations: string[] = (await get(`countriesVisited`)) || [];
 
   return (
     <main className="md:p-24 p-12">
@@ -44,7 +45,7 @@ export default function Home() {
           Born & raised in Canada 🇨🇦, I&apos;m currently based in{" "}
           <span className="text-white">Lisbon, Portugal 🇵🇹</span>. As an avid
           traveller, I&apos;ve explored{" "}
-          <span className="text-white">{countries}</span> countries and
+          <span className="text-white">{locations.length}</span> countries and
           counting. I&apos;m also a huge fan of the outdoors, surfing, and
           reading.
         </p>

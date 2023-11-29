@@ -12,14 +12,24 @@ export const metadata = {
 };
 
 async function getCountries() {
-  const locations: unknown[] = (await get(`countriesVisited`)) || [];
+  try {
+    const locations: string[] = (await get("countriesVisited")) || [];
 
-  return {
-    ...map,
-    features: map.features.filter((country: any) =>
-      locations.includes(country.properties.ADM0_A3)
-    ),
-  };
+    // Convert locations array to a Set for efficient lookup
+    const locationsSet = new Set(locations);
+
+    return {
+      ...map,
+      features: map.features.filter((country: any) =>
+        locationsSet.has(country.properties.ADM0_A3)
+      ),
+    };
+  } catch (error) {
+    console.error("Error fetching countries visited:", error);
+    // Handle the error appropriately
+    // You might want to return an empty map or the original map depending on your requirement
+    return map;
+  }
 }
 
 export default async function Page() {
@@ -34,25 +44,30 @@ export default async function Page() {
         )}&key=${encodeURIComponent(process.env.OPENCAGE_API_KEY || ``)}`
       )
     ).json()
-  ).results[0]?.geometry;
+  ).results[0].geometry;
   const data = await getCountries();
 
   return (
-    <div className="relative">
-      <Map
-        data={data}
-        lat={currentCoordinates.lat || 0}
-        lng={currentCoordinates.lng || 0}
-        pinLabel={currentLocation}
-      />
-      {/* <div className="fixed flex sm:flex-col px-4 sm:px-0 gap-8 w-full sm:w-auto h-auto sm:h-full justify-center top-4 sm:top-0 sm:right-6 z-10">
-        <Cell
-          heading="Countries Visited"
-          body={data.features.length.toString() || `0`}
+    <main className="md:pt-24 pt-12">
+      <h1 className="text-5xl text-zinc-800 text-center	font-medium mt-24">
+        Travel.
+      </h1>
+      <div className="flex justify-center -mt-24 rounded">
+        <Map
+          data={data}
+          lat={currentCoordinates.lat || 0}
+          lng={currentCoordinates.lng || 0}
+          pinLabel={currentLocation}
         />
-        <Cell heading="Distance Flown" body={`${format(distanceFlown)} km`} />
-        <Cell heading="Current Country" body={currentCountry} />
-      </div> */}
-    </div>
+      </div>
+      <div className="justify-center -mt-32">
+        <p className="text-2xl text-zinc-800 text-center font-medium">
+          {data.features.length} countries visited.
+        </p>
+        <p className="text-2xl text-zinc-800 text-center font-medium">
+          {distanceFlown.toLocaleString()} KM flown.
+        </p>
+      </div>
+    </main>
   );
 }

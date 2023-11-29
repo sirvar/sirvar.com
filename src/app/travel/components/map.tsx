@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import Globe, { GlobeMethods } from 'react-globe.gl';
+import { useEffect, useRef, useState } from "react";
+import Globe, { GlobeMethods } from "react-globe.gl";
 
 interface Props {
   data: any;
@@ -36,17 +36,19 @@ export default function Map({ data, lat, lng, pinLabel }: Props) {
   return (
     <Globe
       ref={globeEl}
-      width={width}
-      height={height}
+      backgroundColor="#FFFFFF00"
+      showAtmosphere={false}
+      width={Math.min(768, width)}
+      height={Math.min(768, height)}
       globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
       bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
       polygonsData={data.features}
       polygonAltitude={0.005}
-      polygonCapColor={() => `#35446487`}
+      polygonCapColor={() => `#27272A`}
       polygonSideColor={() => `#000000FF`}
       polygonStrokeColor={() => `#000000`}
       polygonLabel={(country: any) => `
-          <p style="text-shadow: 4px 4px 10px #323264; font-weight: 600;">${country.properties.ADMIN}</p>
+          <p style="text-shadow: 4px 4px 10px #323264; font-weight: 400;">${country.properties.ADMIN}</p>
       `}
       polygonsTransitionDuration={1000}
       htmlElementsData={[
@@ -59,8 +61,8 @@ export default function Map({ data, lat, lng, pinLabel }: Props) {
         const el = document.createElement(`div`);
         el.innerHTML = `
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-          <img src="/images/icons/map.png" style="width: 3rem;margin-top: 0;" />
-          <p style="text-shadow: 4px 4px 10px #323264; font-weight: 600; color: white; font-size: 14px;">${pinLabel}</p>
+          <img src="/me.png" style="width: 2rem;margin-top: 0;" />
+          <p style="text-shadow: 4px 4px 10px #323264; color: white; font-size: 14px;">${pinLabel}</p>
         </div>
         `;
 
