@@ -1,5 +1,4 @@
 import Photo from "@/app/photography/_components/photo";
-import Image from "next/image";
 import { OrderBy, createApi } from "unsplash-js";
 
 export default async function Photography() {

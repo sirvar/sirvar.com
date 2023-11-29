@@ -2,8 +2,6 @@ import BlogPost from "@/app/_components/blog";
 import Experience from "@/app/_components/experience";
 import Icon from "@/app/_components/icon";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   const countries = 25;
