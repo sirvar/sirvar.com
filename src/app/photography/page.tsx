@@ -3,7 +3,7 @@ import { OrderBy, createApi } from "unsplash-js";
 
 export default async function Photography() {
   const unsplash = createApi({
-    accessKey: process.env.UNSPLASH_ACCESS_KEY!,
+    accessKey: process.env.UNSPLASH_API_KEY!,
   });
 
   const photos = (
