@@ -11,17 +11,20 @@
   "dependencies": {
     "@vercel/edge-config": "^0.4.1",
     "geist": "^1.1.0",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.293.0",
     "next": "14.0.3",
-    "react": "^18",
+    "next-mdx-remote": "^4.4.1",
+    "react": "^18.2.0",
     "react-dom": "^18",
     "react-globe.gl": "^2.27.0",
     "unsplash-js": "^7.0.18"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.2.39",
+    "@types/react-dom": "^18.2.17",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",

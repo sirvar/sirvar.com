@@ -2,14 +2,16 @@ import { get } from "@vercel/edge-config";
 import dynamic from "next/dynamic";
 
 import map from "./data/countries.json";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Travel",
+  description: "A map of all the countries I've visited over the years.",
+};
 
 const Map = dynamic(() => import(`@/app/travel/components/map`), {
   ssr: false,
 });
-
-export const metadata = {
-  title: `Travel`,
-};
 
 async function getCountries() {
   try {
@@ -34,7 +36,6 @@ async function getCountries() {
 
 export default async function Page() {
   const distanceFlown: number = (await get(`distanceFlown`)) || 0;
-  const currentCountry: string = (await get(`currentRegion`)) || ``;
   const currentLocation: string = (await get(`currentLocation`)) || ``;
   const currentCoordinates = (
     await (
@@ -48,7 +49,7 @@ export default async function Page() {
   const data = await getCountries();
 
   return (
-    <main className="md:pt-24 pt-12">
+    <main className="md:pt-24 pt-8">
       <h1 className="text-5xl text-zinc-800 text-center	font-medium mt-16 md:mt-24">
         Travel.
       </h1>

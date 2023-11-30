@@ -1,5 +1,11 @@
 import Photo from "@/app/photography/_components/photo";
+import { Metadata } from "next";
 import { OrderBy, createApi } from "unsplash-js";
+
+export const metadata: Metadata = {
+  title: "Photography",
+  description: "A collection of my favourite photos over the years.",
+};
 
 export default async function Photography() {
   const unsplash = createApi({
@@ -25,7 +31,7 @@ export default async function Photography() {
   }
 
   return (
-    <main className="md:p-24 p-12">
+    <main className="md:p-24 p-8">
       <h1 className="text-5xl text-zinc-800 text-center	font-medium my-16 md:my-24">
         Photography.
       </h1>

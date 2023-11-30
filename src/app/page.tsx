@@ -1,14 +1,17 @@
 import BlogPost from "@/app/_components/blog";
 import Experience from "@/app/_components/experience";
 import Icon from "@/app/_components/icon";
+import { getPosts } from "@/db/blog";
 import { get } from "@vercel/edge-config";
+import Image from "next/image";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export default async function Home() {
+  const posts = await getPosts();
   const locations: string[] = (await get(`countriesVisited`)) || [];
 
   return (
-    <main className="md:p-24 p-12">
+    <main className="md:p-24 p-8">
       <h1 className="text-5xl text-zinc-800 text-center	font-medium my-16 md:my-24">
         Hello.
       </h1>
@@ -16,9 +19,11 @@ export default async function Home() {
       <div className="flex flex-col gap-4">
         <div className="flex justify-between items-center border border-zinc-800 rounded-lg p-2 sm:p-4 mb-4">
           <div className="flex gap-2 sm:gap-4 items-center">
-            <img
+            <Image
               className="rounded-full h-12 sm:h-16 w-12 sm:w-16 mx-auto"
-              src="https://placehold.co/96x96/EEE/31343C"
+              src="/rikin.jpeg"
+              width={96}
+              height={96}
               alt="Rikin Katyal"
             />
             <div>
@@ -86,18 +91,20 @@ export default async function Home() {
         />
 
         <h3 className="text-sm">Blog</h3>
-        <BlogPost
-          href="/blog"
-          title="Blog post title"
-          description="The subject of the blog post in a few words or less"
-          imageUrl="https://placehold.co/128x96/EEE/31343C"
-        />
-        <BlogPost
-          href="/blog"
-          title="Blog post title"
-          description="The subject of the blog post in a few words or less"
-          imageUrl="https://placehold.co/128x96/EEE/31343C"
-        />
+        {posts
+          .splice(0, 2)
+          .map(
+            (post) =>
+              post && (
+                <BlogPost
+                  key={post.title}
+                  href={`/blog/${post.slug}`}
+                  title={post.title}
+                  description={post.description}
+                  imageUrl={post.image}
+                />
+              )
+          )}
       </div>
     </main>
   );

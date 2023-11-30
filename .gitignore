@@ -36,7 +36,7 @@ yarn-error.log*
 next-env.d.ts
 
 # Obsidian Files
-/src/content/.obsidian
-/src/content/_private
+.obsidian/
+/src/posts/templates
 # Optional custom CSS
 obsidian.css
