@@ -1,23 +1,18 @@
-module.exports = {
-  reactStrictMode: true,
-  experimental: {
-    // Enables the styled-components SWC transform
-    styledComponents: true,
-  },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-
-    return config;
-  },
-  async rewrites() {
-    return [
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Configure `pageExtensions` to include MDX files
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  // Include Unsplash domain in Next.js image optimization
+  images: {
+    remotePatterns: [
       {
-        source: '/blog',
-        destination: 'https://sirvar.substack.com',
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
       },
-    ]
+    ],
   },
 };
+
+module.exports = nextConfig;

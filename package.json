@@ -1,69 +1,36 @@
 {
-  "name": "typescript-nextjs-starter",
-  "description": "A TypeScript starter for Next.js that includes all you need to build amazing projects",
-  "version": "1.0.0",
+  "name": "sirvar.com",
+  "version": "0.1.0",
   "private": true,
-  "author": "João Pedro Schmitz <hey@joaopedro.dev> (@jpedroschmitz)",
-  "license": "MIT",
-  "keywords": [
-    "nextjs",
-    "starter",
-    "typescript"
-  ],
   "scripts": {
-    "dev": "next",
+    "dev": "next dev -p 7001",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc",
-    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
-    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
-    "postinstall": "husky install",
-    "commit": "cz"
-  },
-  "lint-staged": {
-    "./src/**/*.{ts,js,jsx,tsx}": [
-      "yarn lint --fix",
-      "yarn format"
-    ]
+    "lint": "next lint"
   },
   "dependencies": {
-    "@supabase/supabase-js": "1.35.4",
-    "@types/react-simple-maps": "1.0.7",
-    "@types/styled-components": "5.1.15",
-    "axios": "0.24.0",
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-github-calendar": "3.1.3",
-    "react-simple-maps": "2.3.0",
-    "react-tooltip": "4.2.21",
-    "styled-components": "5.3.3"
+    "@vercel/analytics": "^1.1.1",
+    "@vercel/edge-config": "^0.4.1",
+    "geist": "^1.1.0",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.293.0",
+    "next": "14.0.4-canary.16",
+    "next-mdx-remote": "^4.4.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-globe.gl": "^2.27.0",
+    "unsplash-js": "^7.0.18"
   },
   "devDependencies": {
-    "@commitlint/cli": "15.0.0",
-    "@commitlint/config-conventional": "15.0.0",
-    "@svgr/webpack": "6.1.2",
-    "@types/node": "16.11.7",
-    "@types/react": "17.0.35",
-    "@types/react-dom": "17.0.11",
-    "@typescript-eslint/eslint-plugin": "5.4.0",
-    "@typescript-eslint/parser": "5.4.0",
-    "commitizen": "4.2.4",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint": "7.32.0",
-    "eslint-config-next": "12.0.4",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-import-resolver-typescript": "2.5.0",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-simple-import-sort": "7.0.0",
-    "husky": "7.0.4",
-    "lint-staged": "12.0.2",
-    "prettier": "2.4.1",
-    "typescript": "4.4.4"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20",
+    "@types/react": "^18.2.39",
+    "@types/react-dom": "^18.2.17",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.5",
+    "typescript": "5.3.2"
   }
 }
