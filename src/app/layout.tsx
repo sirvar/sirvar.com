@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/app/_components/navigation";
 import { GeistSans } from "geist/font/sans";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Navigation />
         <div className="container md:max-w-2xl mx-auto max-w-none">
           {children}
+          <Analytics />
         </div>
       </body>
     </html>

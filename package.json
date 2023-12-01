@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.1.1",
     "@vercel/edge-config": "^0.4.1",
     "geist": "^1.1.0",
     "gray-matter": "^4.0.3",
