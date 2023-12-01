@@ -32,10 +32,22 @@ export default async function Home() {
             </div>
           </div>
           <div className="flex gap-2 sm:gap-3">
-            <Icon href="https://twitter.com/sirvar_" Icon={Twitter} />
-            <Icon href="https://github.com/sirvar" Icon={Github} />
-            <Icon href="https://linkedin.com/in/sirvar" Icon={Linkedin} />
-            <Icon href="mailto:rikin@sirvar.com" Icon={Mail} />
+            <Icon
+              title="Twitter/X"
+              href="https://twitter.com/sirvar_"
+              Icon={Twitter}
+            />
+            <Icon
+              title="GitHub"
+              href="https://github.com/sirvar"
+              Icon={Github}
+            />
+            <Icon
+              title="LinkedIn"
+              href="https://linkedin.com/in/sirvar"
+              Icon={Linkedin}
+            />
+            <Icon title="E-mail" href="mailto:rikin@sirvar.com" Icon={Mail} />
           </div>
         </div>
         <h3 className="text-sm">About</h3>
@@ -50,7 +62,7 @@ export default async function Home() {
           Born & raised in Canada 🇨🇦, I&apos;m currently based in{" "}
           <span className="text-white">Lisbon, Portugal 🇵🇹</span>. As an avid
           traveller, I&apos;ve explored{" "}
-          <span className="text-white">{locations.length}</span> countries and
+          <span className="text-white">{locations.length} countries</span> and
           counting. I&apos;m also a huge fan of the outdoors, surfing, and
           reading.
         </p>

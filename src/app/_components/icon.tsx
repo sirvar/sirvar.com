@@ -1,15 +1,15 @@
 import { LucideIcon } from "lucide-react";
-import Image from "next/image";
 
 interface IconProps {
   href: string;
+  title: string;
   Icon: LucideIcon;
 }
 
-const Icon: React.FC<IconProps> = ({ href, Icon }) => {
+const Icon: React.FC<IconProps> = ({ Icon, ...props }) => {
   return (
     <a
-      href={href}
+      {...props}
       className="w-8 sm:w-10 h-8 sm:h-10 flex justify-center items-center p-2 border rounded-lg border-zinc-800 hover:border-zinc-600 transition-all hover:bg-zinc-800"
       target="_blank"
       rel="noopener noreferrer"

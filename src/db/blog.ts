@@ -5,13 +5,14 @@ import { Post } from "@/app/types";
 import { cache } from "react";
 
 export const getPosts = cache(async () => {
-  const posts = await fs.readdir("./posts");
+  const postPath = path.join(process.cwd(), "posts");
+  const posts = await fs.readdir(postPath);
 
   const allPosts = await Promise.all(
     posts
       .filter((file) => path.extname(file) === ".mdx")
       .map(async (file) => {
-        const filePath = `./posts/${file}`;
+        const filePath = `${postPath}/${file}`;
         const postContent = await fs.readFile(filePath, "utf8");
         const { data, content } = matter(postContent);
 

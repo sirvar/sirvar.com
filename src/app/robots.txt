@@ -1,0 +1,4 @@
+User-Agent: *
+
+Host: https://sirvar.com
+Sitemap: https://sirvar.com/sitemap.xml
