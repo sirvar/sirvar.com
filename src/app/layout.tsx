@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Rikin Katyal",
     default: "Rikin Katyal",
   },
-  description: "Canadian Software Engineer based in Lisbon, Portugal.",
+  description: "Software Engineer. Traveller. Photographer. Surfer. Writer.",
 };
 
 export default function RootLayout({
