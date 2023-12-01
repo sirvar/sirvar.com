@@ -25,7 +25,9 @@ const Experience: React.FC<ExperienceProps> = ({
       <div>
         <h4 className="leading-4 text-sm">{title}</h4>
         <p className="text-xs text-zinc-500 mt-1 mb-2 w-max hover:underline">
-          <a href={link}>{company}</a>
+          <a href={link} target="_blank">
+            {company}
+          </a>
         </p>
         <p className="text-sm font-light text-zinc-400">{description}</p>
       </div>

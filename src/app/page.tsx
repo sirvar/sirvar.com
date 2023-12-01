@@ -54,9 +54,9 @@ export default async function Home() {
         <p className="font-light text-sm text-zinc-400">
           Hello, I&apos;m Rikin, a seasoned{" "}
           <span className="text-white">Full Stack Engineer</span> specializing
-          in web3 and fintech, among others. I thrive in rapidly evolving
-          settings, particularly in building and scaling startups to new heights
-          of success.
+          in web3 and fintech. I thrive in rapidly evolving settings,
+          particularly in building and scaling startups to new heights of
+          success.
         </p>
         <p className="font-light text-sm text-zinc-400">
           Born & raised in Canada 🇨🇦, I&apos;m currently based in{" "}
