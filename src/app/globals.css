@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: rgb(17,16,16);
 }
 
 :target:before {
