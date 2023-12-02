@@ -4,7 +4,8 @@ import Icon from "@/app/_components/icon";
 import { getPosts } from "@/db/blog";
 import { get } from "@vercel/edge-config";
 import Image from "next/image";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, MoveRight, Twitter } from "lucide-react";
+import Link from "next/link";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -117,6 +118,15 @@ export default async function Home() {
                 />
               )
           )}
+        <div className="flex justify-end items-center">
+          <Link
+            href="/blog"
+            className="px-4 flex gap-2 items-center rounded-lg text-zinc-400 text-sm
+           hover:text-zinc-200 transition-all"
+          >
+            All posts <MoveRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </main>
   );
