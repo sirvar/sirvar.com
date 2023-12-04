@@ -53,7 +53,12 @@ export const mdxComponents: MDXComponents = {
   a: ({ children, ref, ...props }) => {
     const newRef = ref as Ref<HTMLAnchorElement>;
     return (
-      <Link {...props} ref={newRef} href={props.href || ""} target="_blank">
+      <Link
+        {...props}
+        ref={newRef}
+        href={props.href || ""}
+        target={props.href?.startsWith("#") ? undefined : "_blank"}
+      >
         {children}
       </Link>
     );
