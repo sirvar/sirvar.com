@@ -20,6 +20,18 @@ body {
   background: rgb(17,16,16);
 }
 
+@supports (-webkit-touch-callout: none) {
+  .prose {
+    color: #d4d4d4;
+  }
+
+  .prose a, .prose strong, .prose h1, 
+  .prose h2, .prose h3, .prose h4, 
+  .prose h5, .prose h6, .prose blockquote {
+    color: #ffffff;
+  }
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 

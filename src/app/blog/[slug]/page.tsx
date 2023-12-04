@@ -80,7 +80,7 @@ export default async function BlogPost({ params: { slug } }: BlogProps) {
       <p className="text-sm font-light text-zinc-400">
         {formatDate(post.date)}
       </p>
-      <article className="prose prose-quoteless prose-neutral dark:prose-invert mt-12">
+      <article className="prose prose-quoteless prose-neutral mt-12">
         <MDXRemote source={post.body || ""} components={mdxComponents} />
       </article>
     </main>
