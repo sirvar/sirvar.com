@@ -58,11 +58,11 @@ export default async function BlogPost({ params: { slug } }: BlogProps) {
 
   if (!post) {
     return (
-      <main className="md:py-24 py-12 px-4 md:px-0 text-center">
+      <main className="md:p-24 p-8 text-center">
         <h1 className="text-5xl text-zinc-800 text-center	font-medium my-16 md:my-24">
           Oops.
         </h1>
-        <article className="prose prose-quoteless prose-neutral dark:prose-invert mt-12">
+        <article className="prose prose-quoteless prose-invert mt-12">
           <p>
             Blog post not found. Double check the link or{" "}
             <Link href="/blog">click here</Link> to see all posts.
@@ -73,14 +73,14 @@ export default async function BlogPost({ params: { slug } }: BlogProps) {
   }
 
   return (
-    <main className="md:py-24 py-12 px-4 md:px-0">
+    <main className="md:py-24 py-12 px-6 md:px-0">
       <h1 className="text-2xl text-zinc-200 font-medium mt-16 md:mt-24">
         {post.title}
       </h1>
       <p className="text-sm font-light text-zinc-400">
         {formatDate(post.date)}
       </p>
-      <article className="prose prose-quoteless prose-neutral mt-12">
+      <article className="prose prose-quoteless prose-invert mt-12">
         <MDXRemote source={post.body || ""} components={mdxComponents} />
       </article>
     </main>

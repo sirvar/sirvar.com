@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: rgb(17,16,16);
+  background: rgb(17, 16, 16);
 }
 
 :target:before {
@@ -14,32 +14,23 @@ html {
   margin: -100px 0 0;
 }
 
-
 body {
   color: rgb(255, 255, 255);
-  background: rgb(17,16,16);
-}
-
-@supports (-webkit-touch-callout: none) {
-  .prose {
-    color: #d4d4d4;
-  }
-
-  .prose a, .prose strong, .prose h1, 
-  .prose h2, .prose h3, .prose h4, 
-  .prose h5, .prose h6, .prose blockquote {
-    color: #ffffff;
-  }
+  background: rgb(17, 16, 16);
 }
 
 .prose .anchor {
   @apply absolute invisible no-underline;
 
-  margin-left: -1em;
+  margin-left: -0.75em;
   padding-right: 0.5em;
   width: 80%;
   max-width: 700px;
   cursor: pointer;
+
+  @media screen(md) {
+    margin-left: -1em;
+  }
 }
 
 .anchor:hover {
@@ -52,7 +43,7 @@ body {
 
 .prose .anchor:after {
   @apply text-neutral-300 dark:text-neutral-700;
-  content: '#';
+  content: "#";
 }
 
 .prose *:hover > .anchor {
