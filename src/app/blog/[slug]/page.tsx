@@ -25,6 +25,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    metadataBase: new URL("https://sirvar.com/blog"),
     openGraph: {
       title,
       description,
