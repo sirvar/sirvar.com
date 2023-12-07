@@ -18,9 +18,7 @@ export async function generateMetadata({
   }
 
   let { title, date, description, image } = post;
-  let ogImage = image
-    ? `https://sirvar.com${image}`
-    : `https://sirvar.com/og?title=${title}`;
+  let ogImage = `https://sirvar.com${image}`;
 
   return {
     title,
