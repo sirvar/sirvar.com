@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Rikin Katyal]]></title>
+        <description><![CDATA[Rikin Katyal's blog]]></description>
+        <link>https://sirvar.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 23 Dec 2023 20:55:06 GMT</lastBuildDate>
+        <atom:link href="https://sirvar.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <language><![CDATA[en]]></language>
+        <item>
+            <title><![CDATA[A guide to travel hacking with miles & points]]></title>
+            <description><![CDATA[How I've travelled to 20+ countries in 2 years at a fraction of the cost]]></description>
+            <link>https://sirvar.com/blog/travel-hacking</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/travel-hacking</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Sat, 23 Dec 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Moving to Portugal from Canada]]></title>
+            <description><![CDATA[A digital nomad's guide to immigrating to Portugal]]></description>
+            <link>https://sirvar.com/blog/moving-to-portugal</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/moving-to-portugal</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Mon, 04 Dec 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sales is Everything. Everything is Sales.]]></title>
+            <description><![CDATA[Why getting better at sales can improve many aspects of our life]]></description>
+            <link>https://sirvar.com/blog/everything-is-sales</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/everything-is-sales</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Fri, 20 Oct 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The beauty of uncertainty]]></title>
+            <description><![CDATA[Learning to appreciate and embrace the uncertainty of life that makes it so beautiful]]></description>
+            <link>https://sirvar.com/blog/the-beauty-of-uncertainty</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/the-beauty-of-uncertainty</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Sun, 01 May 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Breaking the cycle of work]]></title>
+            <description><![CDATA[Avoiding work addiction and finding a work-life balance when working remote]]></description>
+            <link>https://sirvar.com/blog/breaking-the-cycle-of-work</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/breaking-the-cycle-of-work</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Fri, 01 Apr 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What I learned living like a digital nomad part-time]]></title>
+            <description><![CDATA[My takeaways from living as a part-time digital nomad across 4 countries]]></description>
+            <link>https://sirvar.com/blog/part-time-nomad-learnings</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/part-time-nomad-learnings</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Mon, 28 Feb 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The best designed apps for iOS and macOS]]></title>
+            <description><![CDATA[Some of the most beautiful apps I've come across]]></description>
+            <link>https://sirvar.com/blog/best-designed-apps</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/best-designed-apps</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Sun, 30 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Finding out if programming is for you, the hard way.]]></title>
+            <description><![CDATA[The journey of an 11 year old boy becoming a software engineer]]></description>
+            <link>https://sirvar.com/blog/programming-is-for-you</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/programming-is-for-you</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Tue, 15 Dec 2015 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
