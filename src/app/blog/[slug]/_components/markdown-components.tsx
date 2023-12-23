@@ -93,7 +93,6 @@ export const mdxComponents: MDXComponents = {
           <em className="text-xs" {...props.children[2].props} />
         </p>
       );
-      // <p className="text">{props.children}</p>;
     } else {
       return <p className="text-md">{props.children}</p>;
     }

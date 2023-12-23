@@ -17,6 +17,8 @@ export default function Map({ data, lat, lng, pinLabel }: Props) {
 
   useEffect(() => {
     if (!globeEl.current) return;
+    // Set the initial position of the globe to focus on the pin location
+    globeEl.current.pointOfView({ lat, lng }, 0);
     // Auto-rotate
     globeEl.current.controls().autoRotate = true;
     globeEl.current.controls().autoRotateSpeed = 0.5;
@@ -31,6 +33,7 @@ export default function Map({ data, lat, lng, pinLabel }: Props) {
     return () => {
       window?.removeEventListener(`resize`, handleResize);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
