@@ -13,6 +13,7 @@
     "@types/rss": "^0.0.32",
     "@vercel/analytics": "^1.1.1",
     "@vercel/edge-config": "^0.4.1",
+    "@vercel/postgres": "^0.5.1",
     "@vercel/speed-insights": "^1.0.1",
     "geist": "^1.1.0",
     "gray-matter": "^4.0.3",

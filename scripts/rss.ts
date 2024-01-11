@@ -20,7 +20,7 @@ const main = () => {
   const feed = new RSS({
     title: "Rikin Katyal",
     site_url: "https://sirvar.com",
-    feed_url: "https://sirvar.com/feed.xml",
+    feed_url: "https://sirvar.com/rss.xml",
     language: "en",
     description: "Rikin Katyal's blog",
   });
@@ -39,7 +39,7 @@ const main = () => {
   });
 
   const rss = feed.xml({ indent: true });
-  fs.writeFileSync(path.join(__dirname, "../public/feed.xml"), rss);
+  fs.writeFileSync(path.join(__dirname, "../public/rss.xml"), rss);
 };
 
 main();
