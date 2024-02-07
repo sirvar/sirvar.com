@@ -21,7 +21,7 @@ export default async function Blog() {
           post ? (
             <BlogPost
               key={post.title}
-              href={`/blog/${post.slug}`}
+              slug={post.slug}
               title={post.title}
               date={formatDate(post.date)}
               imageUrl={post.image}
