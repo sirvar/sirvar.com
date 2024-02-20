@@ -38,5 +38,10 @@
     "tailwindcss": "^3.3.5",
     "ts-node": "^10.9.2",
     "typescript": "5.3.2"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "unsplash-js@7.0.18": "patches/unsplash-js@7.0.18.patch"
+    }
   }
 }

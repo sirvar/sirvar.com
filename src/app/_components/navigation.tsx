@@ -17,7 +17,7 @@ const Navigation: React.FC = () => {
 
   return (
     <div className="flex justify-center fixed py-4 pb-1 w-full bg-background-primary z-10">
-      <div className="absolute h-16 top-[4.25rem] left-0 w-full bg-gradient-to-b from-background-primary to-transparent" />
+      <div className="absolute h-8 md:h-16 top-[4.25rem] left-0 w-full bg-gradient-to-b from-background-primary to-transparent" />
       <nav className="inline-flex py-3 px-4 gap-6 justify-center border border-zinc-600 rounded-full w-auto">
         {links.map((link, index) => (
           <Link key={index} href={link.href}>

@@ -62,10 +62,10 @@ export default async function Page() {
         />
       </div>
       <div className="justify-center -mt-32">
-        <p className="text-2xl text-zinc-600 text-center font-medium">
+        <p className="text-2xl text-zinc-700 text-center font-medium">
           {data.features.length} countries visited.
         </p>
-        <p className="text-2xl text-zinc-600 text-center font-medium">
+        <p className="text-2xl text-zinc-700 text-center font-medium">
           {distanceFlown.toLocaleString()} KM flown.
         </p>
       </div>
