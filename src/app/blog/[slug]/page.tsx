@@ -65,7 +65,7 @@ export default async function BlogPost({ params: { slug } }: BlogProps) {
   if (!post) {
     return (
       <main className="md:p-24 p-8 text-center">
-        <h1 className="text-5xl text-zinc-800 text-center	font-medium my-16 md:my-24">
+        <h1 className="text-5xl text-zinc-600 text-center	font-medium my-16 md:my-24">
           Oops.
         </h1>
         <article className="prose prose-quoteless prose-invert mt-12">
@@ -84,10 +84,10 @@ export default async function BlogPost({ params: { slug } }: BlogProps) {
         {post.title}
       </h1>
       <div className="flex flex-row justify-between">
-        <p className="text-sm font-light text-zinc-400">
+        <p className="text-sm font-light text-zinc-300">
           {formatDate(post.date)}
         </p>
-        <p className="text-sm font-light text-zinc-400">
+        <p className="text-sm font-light text-zinc-300">
           {views?.rows?.[0]?.count || 0} views
         </p>
       </div>

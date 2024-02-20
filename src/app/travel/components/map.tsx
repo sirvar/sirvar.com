@@ -47,7 +47,7 @@ export default function Map({ data, lat, lng, pinLabel }: Props) {
       bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
       polygonsData={data.features}
       polygonAltitude={0.005}
-      polygonCapColor={() => `#27272A`}
+      polygonCapColor={() => `#52525B`}
       polygonSideColor={() => `#000000FF`}
       polygonStrokeColor={() => `#000000`}
       polygonLabel={(country: any) => `

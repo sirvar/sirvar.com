@@ -29,10 +29,10 @@ const BlogPost: React.FC<BlogProps> = async ({
         />
         <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-1">
-            <p className="text-sm font-light text-zinc-400">{date}</p>
+            <p className="text-sm font-light text-zinc-300">{date}</p>
             <h4 className="text-md">{title}</h4>
           </div>
-          <p className="text-xs font-light text-zinc-400 mb-0">
+          <p className="text-xs font-light text-zinc-300 mb-0">
             {views?.rows?.[0].count} views
           </p>
         </div>

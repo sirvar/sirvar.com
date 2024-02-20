@@ -13,7 +13,7 @@ export default async function Home() {
 
   return (
     <main className="md:p-24 p-8">
-      <h1 className="text-5xl text-zinc-800 text-center	font-medium my-16 md:my-24">
+      <h1 className="text-5xl text-zinc-600 text-center	font-medium my-16 md:my-24">
         Hello.
       </h1>
 
@@ -29,7 +29,7 @@ export default async function Home() {
             />
             <div>
               <p className="text-sm sm:text-md">Rikin Katyal</p>
-              <p className="text-xs text-zinc-400">Software Engineer</p>
+              <p className="text-xs text-zinc-300">Software Engineer</p>
             </div>
           </div>
           <div className="flex gap-2 sm:gap-3">
@@ -52,19 +52,21 @@ export default async function Home() {
           </div>
         </div>
         <h3 className="text-sm">About</h3>
-        <p className="font-light text-sm text-zinc-400">
+        <p className="font-light text-sm text-zinc-300">
           Hello, I&apos;m Rikin, a seasoned{" "}
-          <span className="text-white">Full Stack Engineer</span> specializing
-          in web3 and fintech. I thrive in rapidly evolving settings,
-          particularly in building and scaling startups to new heights of
-          success.
+          <span className="text-white font-medium">Full Stack Engineer</span>{" "}
+          specializing in web3 and fintech. I thrive in rapidly evolving
+          settings, particularly in building and scaling startups to new heights
+          of success.
         </p>
-        <p className="font-light text-sm text-zinc-400">
+        <p className="font-light text-sm text-zinc-300">
           Born & raised in Canada 🇨🇦, I&apos;m currently based in{" "}
-          <span className="text-white">Lisbon, Portugal 🇵🇹</span>. As an avid
-          traveller, I&apos;ve explored{" "}
-          <span className="text-white">{locations.length} countries</span> and
-          counting. I&apos;m also a huge fan of the outdoors, surfing, and
+          <span className="text-white font-medium">Lisbon, Portugal 🇵🇹</span>.
+          As an avid traveller, I&apos;ve explored{" "}
+          <span className="text-white font-medium">
+            {locations.length} countries
+          </span>{" "}
+          and counting. I&apos;m also a huge fan of the outdoors, surfing, and
           reading.
         </p>
 
@@ -121,7 +123,7 @@ export default async function Home() {
         <div className="flex justify-end items-center">
           <Link
             href="/blog"
-            className="px-4 flex gap-2 items-center rounded-lg text-zinc-400 text-sm
+            className="px-4 flex gap-2 items-center rounded-lg text-zinc-300 text-sm
            hover:text-zinc-200 transition-all"
           >
             All posts <MoveRight className="w-4 h-4" />

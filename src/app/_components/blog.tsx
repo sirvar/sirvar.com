@@ -30,7 +30,7 @@ const BlogPost: React.FC<BlogProps> = ({
             <h4 className="text-sm">{title}</h4>
             <ArrowUpRight className="grow-0 shrink-0 w-3 h-3" />
           </div>
-          <p className="text-sm font-light text-zinc-400">{description}</p>
+          <p className="text-sm font-light text-zinc-300">{description}</p>
         </div>
       </div>
     </Link>

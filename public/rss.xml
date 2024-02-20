@@ -4,12 +4,12 @@
         <description><![CDATA[Rikin Katyal's blog]]></description>
         <link>https://sirvar.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 08 Feb 2024 10:36:22 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 20 Feb 2024 10:50:00 GMT</lastBuildDate>
         <atom:link href="https://sirvar.com/rss.xml" rel="self" type="application/rss+xml"/>
         <language><![CDATA[en]]></language>
         <item>
             <title><![CDATA[A guide to travel hacking with miles & points]]></title>
-            <description><![CDATA[How I've travelled to 20+ countries in 2 years at a fraction of the cost]]></description>
+            <description><![CDATA[How I've travelled to over 20 countries in 2 years at a fraction of the cost]]></description>
             <link>https://sirvar.com/blog/travel-hacking</link>
             <guid isPermaLink="false">https://sirvar.com/blog/travel-hacking</guid>
             <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
@@ -75,6 +75,13 @@
             <title><![CDATA[What's inside a digital nomad's backpack]]></title>
             <link>https://sirvar.com/blog/nomad-backpack-guide.md</link>
             <guid isPermaLink="false">https://sirvar.com/blog/nomad-backpack-guide.md</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Where do nomads stay]]></title>
+            <link>https://sirvar.com/blog/where-do-nomads-stay.md</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/where-do-nomads-stay.md</guid>
             <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
         </item>
