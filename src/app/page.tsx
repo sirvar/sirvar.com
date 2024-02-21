@@ -4,7 +4,7 @@ import Icon from "@/app/_components/icon";
 import { getPosts } from "@/db/blog";
 import { get } from "@vercel/edge-config";
 import Image from "next/image";
-import { Github, Linkedin, Mail, MoveRight, Twitter } from "lucide-react";
+import { AtSign, Github, Linkedin, MoveRight, Twitter } from "lucide-react";
 import Link from "next/link";
 
 export default async function Home() {
@@ -48,7 +48,7 @@ export default async function Home() {
               href="https://linkedin.com/in/sirvar"
               Icon={Linkedin}
             />
-            <Icon title="E-mail" href="mailto:rikin@sirvar.com" Icon={Mail} />
+            <Icon title="E-mail" href="mailto:rikin@sirvar.com" Icon={AtSign} />
           </div>
         </div>
         <h3 className="text-sm">About</h3>
