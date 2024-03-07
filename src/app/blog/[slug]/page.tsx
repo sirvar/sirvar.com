@@ -1,3 +1,4 @@
+import { BlogSubscription } from "@/app/_components/blog-subscription";
 import { mdxComponents } from "@/app/blog/[slug]/_components/markdown-components";
 import { increment } from "@/db/actions";
 import { getPost, getPosts } from "@/db/blog";
@@ -94,6 +95,7 @@ export default async function BlogPost({ params: { slug } }: BlogProps) {
       <article className="prose prose-quoteless prose-invert mt-12">
         <MDXRemote source={post.body || ""} components={mdxComponents} />
       </article>
+      <BlogSubscription />
     </main>
   );
 }

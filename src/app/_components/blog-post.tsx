@@ -16,7 +16,7 @@ const BlogPost: React.FC<BlogProps> = ({
   href,
 }) => {
   return (
-    <Link href={href}>
+    <Link href={href} prefetch>
       <div className="flex gap-4 p-2 hover:bg-zinc-800 rounded-lg transition-colors">
         <Image
           className="grow-0 shrink-0 basis-36 w-36 h-24 rounded object-cover"

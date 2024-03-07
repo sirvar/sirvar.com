@@ -1,4 +1,4 @@
-import BlogPost from "@/app/_components/blog";
+import BlogPost from "@/app/_components/blog-post";
 import Experience from "@/app/_components/experience";
 import Icon from "@/app/_components/icon";
 import { getPosts } from "@/db/blog";
