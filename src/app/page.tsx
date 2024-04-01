@@ -71,14 +71,14 @@ export default async function Home() {
         </p>
 
         <h3 className="text-sm">Experience</h3>
-        {/* <Experience
+        <Experience
           startYear={2023}
           endYear="Now"
           title="Co-founder & CTO"
           company="Noovid"
           link="https://noovid.com"
-          description="Building the future of user generated content for e-commerce brands to connect with top creators"
-        /> */}
+          description="Building the future of user generated content by connecting top creators with e-commerce brands"
+        />
         <Experience
           startYear={2022}
           endYear={2023}
