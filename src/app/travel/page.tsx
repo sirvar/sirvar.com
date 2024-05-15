@@ -17,7 +17,6 @@ async function getCountries() {
   try {
     const locations: string[] = (await get("countriesVisited")) || [];
 
-    // Convert locations array to a Set for efficient lookup
     const locationsSet = new Set(locations);
 
     return {
@@ -28,8 +27,6 @@ async function getCountries() {
     };
   } catch (error) {
     console.error("Error fetching countries visited:", error);
-    // Handle the error appropriately
-    // You might want to return an empty map or the original map depending on your requirement
     return map;
   }
 }

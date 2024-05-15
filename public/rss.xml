@@ -4,9 +4,17 @@
         <description><![CDATA[Rikin Katyal's blog]]></description>
         <link>https://sirvar.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 01 Apr 2024 19:58:03 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 15 May 2024 11:16:51 GMT</lastBuildDate>
         <atom:link href="https://sirvar.com/rss.xml" rel="self" type="application/rss+xml"/>
         <language><![CDATA[en]]></language>
+        <item>
+            <title><![CDATA[Waves of wisdom]]></title>
+            <description><![CDATA[Life lessons beyond the break from my journey learning to surf]]></description>
+            <link>https://sirvar.com/blog/waves-of-wisdom</link>
+            <guid isPermaLink="false">https://sirvar.com/blog/waves-of-wisdom</guid>
+            <dc:creator><![CDATA[Rikin Katyal]]></dc:creator>
+            <pubDate>Wed, 15 May 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[What's inside a digital nomad's backpack]]></title>
             <description><![CDATA[What's inside a digital nomad's backpack]]></description>
