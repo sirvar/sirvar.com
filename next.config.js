@@ -13,6 +13,22 @@ const nextConfig = {
       },
     ],
   },
+  rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/:path*",
+          has: [
+            {
+              type: "host",
+              value: "overseerr.sirvar.com",
+            },
+          ],
+          destination: "https://overseerr-sirvar.janus.usbx.me/:path*",
+        },
+      ],
+    };
+  },
 };
 
 module.exports = nextConfig;
