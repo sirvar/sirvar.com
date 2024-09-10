@@ -68,7 +68,7 @@ export default async function Page() {
           {distanceFlown.toLocaleString()} KM flown.
         </p>
       </div>
-      <div className="w-64 mx-auto mt-12 mb-8 rounded-full">
+      <div className="w-64 mx-auto mt-12 mb-8 rounded-full overflow-hidden">
         <Link href="/travel/guides" className="btn">
           <span className="btnInner">View travel guides</span>
         </Link>
