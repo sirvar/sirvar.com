@@ -1,8 +1,10 @@
 import { get } from "@vercel/edge-config";
 import dynamic from "next/dynamic";
+import "./styles.css";
 
 import map from "./data/countries.json";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Travel",
@@ -65,6 +67,11 @@ export default async function Page() {
         <p className="text-2xl text-zinc-700 text-center font-medium">
           {distanceFlown.toLocaleString()} KM flown.
         </p>
+      </div>
+      <div className="absolute w-64 left-1/2 -translate-x-1/2 bottom-12 z-10">
+        <Link href="/travel/guides" className="btn">
+          <span className="btnInner">View travel guides</span>
+        </Link>
       </div>
     </main>
   );

@@ -33,7 +33,7 @@ const BlogPost: React.FC<BlogProps> = async ({
             <h4 className="text-md">{title}</h4>
           </div>
           <p className="text-xs font-light text-zinc-300 mb-0">
-            {views?.rows?.[0]?.count ?? 0} views
+            {(views?.rows?.[0]?.count ?? 0).toLocaleString()} views
           </p>
         </div>
       </div>

@@ -89,7 +89,7 @@ export default async function BlogPost({ params: { slug } }: BlogProps) {
           {formatDate(post.date)}
         </p>
         <p className="text-sm font-light text-zinc-300">
-          {views?.rows?.[0]?.count || 0} views
+          {(views?.rows?.[0]?.count || 0).toLocaleString()} views
         </p>
       </div>
       <article className="prose prose-quoteless prose-invert mt-12">

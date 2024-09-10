@@ -35,8 +35,6 @@ export default async function Photography() {
     quantity: 1,
   });
 
-  console.log(stats.response);
-
   return (
     <main className="md:p-24 p-8">
       <h1 className="text-5xl text-zinc-600 text-center	font-medium mt-16 md:mt-24">
