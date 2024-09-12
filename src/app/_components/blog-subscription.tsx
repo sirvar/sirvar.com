@@ -32,15 +32,23 @@ export const Form = () => {
   );
 };
 
-export const BlogSubscription = () => {
+interface BlogSubscriptionProps {
+  className?: string;
+}
+
+export const BlogSubscription = ({ className }: BlogSubscriptionProps) => {
   const [state, formAction] = useFormState(subscribe, initialState);
 
   if (state.success && state.message) {
-    return <p className="mt-6 text-center text-zinc-500">{state.message}</p>;
+    return (
+      <p className={`mt-6 text-center text-zinc-500 ${className}`}>
+        {state.message}
+      </p>
+    );
   }
 
   return (
-    <div className="mt-6 w-full">
+    <div className={`mt-6 w-full ${className}`}>
       <p className="mb-4 text-center text-zinc-500">
         Subscribe to get notified about new posts
       </p>
