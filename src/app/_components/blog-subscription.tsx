@@ -48,7 +48,7 @@ export const BlogSubscription = ({ className }: BlogSubscriptionProps) => {
   }
 
   return (
-    <div className={`mt-6 w-full ${className}`}>
+    <div className={`mt-6 px-4 w-full ${className}`}>
       <p className="mb-4 text-center text-zinc-500">
         Subscribe to get notified about new posts
       </p>
