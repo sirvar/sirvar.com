@@ -32,11 +32,11 @@ export const Form = () => {
   );
 };
 
-interface BlogSubscriptionProps {
+interface EmailSubscriptionProps {
   className?: string;
 }
 
-export const BlogSubscription = ({ className }: BlogSubscriptionProps) => {
+export const EmailSubscription = ({ className }: EmailSubscriptionProps) => {
   const [state, formAction] = useFormState(subscribe, initialState);
 
   if (state.success && state.message) {
@@ -50,7 +50,7 @@ export const BlogSubscription = ({ className }: BlogSubscriptionProps) => {
   return (
     <div className={`mt-6 px-4 w-full ${className}`}>
       <p className="mb-4 text-center text-zinc-500">
-        Subscribe to get notified about new posts
+        Subscribe to get notified about updates
       </p>
       <form
         action={formAction}

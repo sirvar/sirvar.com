@@ -1,4 +1,4 @@
-import { BlogSubscription } from "@/app/_components/blog-subscription";
+import { EmailSubscription } from "@/app/_components/blog-subscription";
 import BlogPost from "@/app/blog/_components/blog";
 import { getPosts } from "@/db/blog";
 import { formatDate } from "@/utils/date";
@@ -29,7 +29,7 @@ export default async function Blog() {
             />
           ) : null
         )}
-        <BlogSubscription />
+        <EmailSubscription />
       </div>
     </main>
   );

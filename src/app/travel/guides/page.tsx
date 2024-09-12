@@ -1,4 +1,4 @@
-import { BlogSubscription } from "@/app/_components/blog-subscription";
+import { EmailSubscription } from "@/app/_components/blog-subscription";
 import City from "@/app/travel/guides/components/city";
 import { guides } from "@/app/travel/guides/data";
 
@@ -27,7 +27,7 @@ export default async function TravelGuides() {
             />
           ))}
       </div>
-      <BlogSubscription className="mb-16" />
+      <EmailSubscription className="mb-16" />
     </main>
   );
 }
