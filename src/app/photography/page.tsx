@@ -1,24 +1,47 @@
 import Photo from "@/app/photography/_components/photo";
+import DelayedButton from "@/app/photography/_components/delayed-button";
 import { Metadata } from "next";
 import { OrderBy, createApi } from "unsplash-js";
+import { unstable_cache } from "next/cache";
 
 export const metadata: Metadata = {
   title: "Photography",
   description: "A collection of my favourite photos over the years.",
 };
 
-export default async function Photography() {
-  const unsplash = createApi({
-    accessKey: process.env.UNSPLASH_API_KEY!,
-  });
+const getUnsplashData = unstable_cache(
+  async () => {
+    const unsplash = createApi({
+      accessKey: process.env.UNSPLASH_API_KEY!,
+    });
 
-  const photos = (
-    await unsplash.users.getPhotos({
-      username: "sirvar",
-      perPage: 30,
-      orderBy: OrderBy.POPULAR,
-    })
-  ).response?.results;
+    const [photosResponse, statsResponse] = await Promise.all([
+      unsplash.users.getPhotos({
+        username: "sirvar",
+        perPage: 30,
+        orderBy: OrderBy.POPULAR,
+      }),
+      unsplash.users.getStatistics({
+        username: "sirvar",
+        quantity: 1,
+      }),
+    ]);
+
+    return {
+      photos: photosResponse.response?.results || [],
+      stats: statsResponse.response,
+    };
+  },
+  ["unsplash-photography-data"],
+  {
+    revalidate: 3600, // Revalidate every hour (3600 seconds)
+    tags: ["unsplash-data"],
+  }
+);
+
+export default async function Photography() {
+  const { photos, stats } = await getUnsplashData();
+
   const left = [];
   const right = [];
 
@@ -30,19 +53,14 @@ export default async function Photography() {
     }
   }
 
-  const stats = await unsplash.users.getStatistics({
-    username: "sirvar",
-    quantity: 1,
-  });
-
   return (
     <main className="md:p-24 p-8">
       <h1 className="text-5xl text-zinc-600 text-center	font-medium mt-16 md:mt-24">
         Photography.
       </h1>
       <p className="text-xl text-zinc-700 text-center font-medium mt-6 mb-16">
-        {stats.response?.views.total.toLocaleString()} views.{" "}
-        {stats.response?.downloads.total.toLocaleString()} downloads.
+        {stats?.views.total.toLocaleString()} views.{" "}
+        {stats?.downloads.total.toLocaleString()} downloads.
       </p>
       <div className="hidden md:flex justify-center gap-4">
         <div className="flex flex-col gap-4">
@@ -61,17 +79,7 @@ export default async function Photography() {
           <Photo key={photo.id} photo={photo} width={640} />
         ))}
       </div>
-      <div className="mt-10 flex justify-center items-center">
-        <a
-          href="https://unsplash.com/@sirvar"
-          className="px-4 py-2 border rounded-lg border-zinc-800 text-sm
-           hover:border-zinc-600 hover:bg-zinc-800 transition-all"
-          target="_blank"
-          rel="noreferrer"
-        >
-          See more
-        </a>
-      </div>
+      <DelayedButton />
     </main>
   );
 }

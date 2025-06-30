@@ -52,11 +52,6 @@ export default function RootLayout({
           rel="icon"
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨🏽‍💻</text></svg>"
         />
-        <script
-          defer
-          src="http://umami-kw84808g8k0gcc0w0o4wwgo0.188.245.108.25.sslip.io/script.js"
-          data-website-id="e030e719-1411-4abb-abac-0106e8c82b6e"
-        ></script>
       </head>
       <body className={GeistSans.className}>
         <Navigation />
