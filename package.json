@@ -2,6 +2,9 @@
   "name": "sirvar.com",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev -p 7001",
     "build": "next build",
