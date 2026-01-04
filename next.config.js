@@ -24,7 +24,7 @@ const nextConfig = {
               value: "overseerr.sirvar.com",
             },
           ],
-          destination: "https://overseerr-sirvar.janus.usbx.me/:path*",
+          destination: "https://overseerr-sirvar.galaxy.usbx.me/:path*",
         },
       ],
     };
