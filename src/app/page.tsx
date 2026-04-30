@@ -7,9 +7,17 @@ import Image from "next/image";
 import { AtSign, Github, Linkedin, MoveRight, Twitter } from "lucide-react";
 import Link from "next/link";
 
+async function getCountriesVisited(): Promise<string[]> {
+  try {
+    return ((await get(`countriesVisited`)) as string[]) || [];
+  } catch {
+    return [];
+  }
+}
+
 export default async function Home() {
   const posts = await getPosts();
-  const locations: string[] = (await get(`countriesVisited`)) || [];
+  const locations = await getCountriesVisited();
 
   return (
     <main className="md:p-24 p-8">

@@ -40,3 +40,6 @@ next-env.d.ts
 /src/posts/templates
 # Optional custom CSS
 obsidian.css
+
+# Conductor workspace scratch
+.context/

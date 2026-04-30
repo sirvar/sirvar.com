@@ -33,18 +33,49 @@ async function getCountries() {
   }
 }
 
+async function getEdgeNumber(key: string, fallback: number): Promise<number> {
+  try {
+    const value = await get(key);
+    return typeof value === "number" ? value : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+async function getEdgeString(key: string, fallback: string): Promise<string> {
+  try {
+    const value = await get(key);
+    return typeof value === "string" ? value : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+async function geocodeLocation(
+  location: string
+): Promise<{ lat: number; lng: number }> {
+  const apiKey = process.env.OPENCAGE_API_KEY;
+  if (!location || !apiKey) return { lat: 0, lng: 0 };
+  try {
+    const res = await fetch(
+      `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(
+        location
+      )}&key=${encodeURIComponent(apiKey)}`
+    );
+    if (!res.ok) return { lat: 0, lng: 0 };
+    const json = await res.json();
+    const geometry = json?.results?.[0]?.geometry;
+    if (!geometry) return { lat: 0, lng: 0 };
+    return { lat: geometry.lat ?? 0, lng: geometry.lng ?? 0 };
+  } catch {
+    return { lat: 0, lng: 0 };
+  }
+}
+
 export default async function Page() {
-  const distanceFlown: number = (await get(`distanceFlown`)) || 0;
-  const currentLocation: string = (await get(`currentLocation`)) || ``;
-  const currentCoordinates = (
-    await (
-      await fetch(
-        `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(
-          currentLocation
-        )}&key=${encodeURIComponent(process.env.OPENCAGE_API_KEY || ``)}`
-      )
-    ).json()
-  ).results[0].geometry;
+  const distanceFlown = await getEdgeNumber("distanceFlown", 0);
+  const currentLocation = await getEdgeString("currentLocation", "");
+  const currentCoordinates = await geocodeLocation(currentLocation);
   const data = await getCountries();
 
   return (

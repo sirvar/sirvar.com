@@ -5,6 +5,7 @@
   "engines": {
     "node": ">=22"
   },
+  "packageManager": "pnpm@10.18.1",
   "scripts": {
     "dev": "next dev -p 7001",
     "build": "next build",
@@ -13,6 +14,9 @@
     "build:rss": "ts-node -O '{\"module\": \"commonjs\"}' ./scripts/rss.ts"
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
     "@types/rss": "^0.0.32",
     "@vercel/analytics": "^1.1.1",
     "@vercel/edge-config": "^0.4.1",
@@ -22,13 +26,13 @@
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.293.0",
     "next": "14.1.3",
-    "next-mdx-remote": "^4.4.1",
+    "next-mdx-remote": "^6.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-globe.gl": "^2.27.0",
     "resend": "^3.2.0",
     "rss": "^1.2.2",
-    "unsplash-js": "^7.0.18"
+    "unsplash-js": "7.0.18"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
