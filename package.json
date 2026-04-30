@@ -13,6 +13,9 @@
     "build:rss": "ts-node -O '{\"module\": \"commonjs\"}' ./scripts/rss.ts"
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
     "@types/rss": "^0.0.32",
     "@vercel/analytics": "^1.1.1",
     "@vercel/edge-config": "^0.4.1",
