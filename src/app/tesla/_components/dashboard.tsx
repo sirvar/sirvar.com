@@ -185,6 +185,7 @@ const Dashboard: React.FC<{ defaults: DashboardApp[] }> = ({ defaults }) => {
   const [showAddModal, setShowAddModal] = useState(false);
   const [carName, setCarName] = useState<string>(DEFAULT_CAR_NAME);
   const [tempUnit, setTempUnit] = useState<TempUnit>("celsius");
+  const [fullscreenHint, setFullscreenHint] = useState<string | null>(null);
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
@@ -300,14 +301,42 @@ const Dashboard: React.FC<{ defaults: DashboardApp[] }> = ({ defaults }) => {
   }, []);
 
   const toggleFullscreen = useCallback(async () => {
+    type LegacyDoc = Document & {
+      webkitFullscreenElement?: Element;
+      webkitExitFullscreen?: () => Promise<void> | void;
+    };
+    type LegacyEl = HTMLElement & {
+      webkitRequestFullscreen?: () => Promise<void> | void;
+    };
+    const doc = document as LegacyDoc;
+    const root = document.documentElement as LegacyEl;
+    const inFullscreen = !!doc.fullscreenElement || !!doc.webkitFullscreenElement;
+
     try {
-      if (!document.fullscreenElement) {
-        await document.documentElement.requestFullscreen();
-      } else {
-        await document.exitFullscreen();
+      if (inFullscreen) {
+        if (doc.exitFullscreen) {
+          await doc.exitFullscreen();
+        } else if (doc.webkitExitFullscreen) {
+          await doc.webkitExitFullscreen();
+        }
+        return;
       }
+      if (root.requestFullscreen) {
+        await root.requestFullscreen();
+        return;
+      }
+      if (root.webkitRequestFullscreen) {
+        await root.webkitRequestFullscreen();
+        return;
+      }
+      throw new Error("Fullscreen API unavailable");
     } catch {
-      // some browsers (incl. Tesla in-car) may reject — fail silently
+      // Tesla's in-car browser blocks the Fullscreen API. Surface a hint so the
+      // tap doesn't look broken; user can use Tesla Theater mode for true FS.
+      setFullscreenHint(
+        "Fullscreen blocked by browser. On Tesla, use Theater mode.",
+      );
+      window.setTimeout(() => setFullscreenHint(null), 4000);
     }
   }, []);
 
@@ -449,6 +478,11 @@ const Dashboard: React.FC<{ defaults: DashboardApp[] }> = ({ defaults }) => {
         onClose={() => setShowAddModal(false)}
         onAdd={handleAdd}
       />
+      {fullscreenHint && (
+        <div className="tesla-toast" role="status" aria-live="polite">
+          {fullscreenHint}
+        </div>
+      )}
     </div>
   );
 };
