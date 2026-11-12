@@ -46,9 +46,7 @@ export default function Map({ data, lat, lng, pinLabel }: Props) {
       globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
       bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
       polygonsData={data.features.filter(
-        (f: any) =>
-          f.properties.ADMIN !== "Liechtenstein" &&
-          f.properties.ADMIN !== "Vatican"
+        (f: any) => !["LIE", "VAT", "AND", "MCO"].includes(f.properties.ADM0_A3)
       )}
       polygonAltitude={0.005}
       polygonCapColor={() => `#52525B`}

@@ -59521,6 +59521,288 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 3,
+        "featurecla": "Admin-0 country",
+        "LABELRANK": 6,
+        "SOVEREIGNT": "Andorra",
+        "SOV_A3": "AND",
+        "ADM0_DIF": 0,
+        "LEVEL": 2,
+        "TYPE": "Sovereign country",
+        "ADMIN": "Andorra",
+        "ADM0_A3": "AND",
+        "GEOU_DIF": 0,
+        "GEOUNIT": "Andorra",
+        "GU_A3": "AND",
+        "SU_DIF": 0,
+        "SUBUNIT": "Andorra",
+        "SU_A3": "AND",
+        "BRK_DIFF": 0,
+        "NAME": "Andorra",
+        "NAME_LONG": "Andorra",
+        "BRK_A3": "AND",
+        "BRK_NAME": "Andorra",
+        "BRK_GROUP": null,
+        "ABBREV": "And.",
+        "POSTAL": "AND",
+        "FORMAL_EN": "Principality of Andorra",
+        "FORMAL_FR": null,
+        "NAME_CIAWF": "Andorra",
+        "NOTE_ADM0": null,
+        "NOTE_BRK": null,
+        "NAME_SORT": "Andorra",
+        "NAME_ALT": null,
+        "MAPCOLOR7": 1,
+        "MAPCOLOR8": 4,
+        "MAPCOLOR9": 1,
+        "MAPCOLOR13": 8,
+        "POP_EST": 77142,
+        "POP_RANK": 8,
+        "GDP_MD_EST": null,
+        "POP_YEAR": 2019,
+        "LASTCENSUS": null,
+        "GDP_YEAR": 2019,
+        "ECONOMY": "2. Developed region: nonG7",
+        "INCOME_GRP": "2. High income: nonOECD",
+        "WIKIPEDIA": null,
+        "FIPS_10_": null,
+        "ISO_A2": "AD",
+        "ISO_A3": "AND",
+        "ISO_A3_EH": "AND",
+        "ISO_N3": "020",
+        "UN_A3": "020",
+        "WB_A2": "AD",
+        "WB_A3": "ADO",
+        "WOE_ID": 23424744,
+        "WOE_ID_EH": 23424744,
+        "WOE_NOTE": "Exact WOE match as country",
+        "ADM0_A3_IS": null,
+        "ADM0_A3_US": "AND",
+        "ADM0_A3_UN": -99,
+        "ADM0_A3_WB": -99,
+        "CONTINENT": "Europe",
+        "REGION_UN": "Europe",
+        "SUBREGION": "Southern Europe",
+        "REGION_WB": "Europe & Central Asia",
+        "NAME_LEN": 7,
+        "LONG_LEN": 7,
+        "ABBREV_LEN": 4,
+        "TINY": 5,
+        "HOMEPART": 1,
+        "MIN_ZOOM": 0,
+        "MIN_LABEL": 5,
+        "MAX_LABEL": 10
+      },
+      "bbox": [
+        1.414844,
+        42.434473,
+        1.740234,
+        42.642725
+      ],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1.706055,
+              42.50332
+            ],
+            [
+              1.678516,
+              42.49668
+            ],
+            [
+              1.586426,
+              42.455957
+            ],
+            [
+              1.534082,
+              42.441699
+            ],
+            [
+              1.48623,
+              42.434473
+            ],
+            [
+              1.448828,
+              42.437451
+            ],
+            [
+              1.428125,
+              42.461328
+            ],
+            [
+              1.430273,
+              42.497852
+            ],
+            [
+              1.421973,
+              42.530811
+            ],
+            [
+              1.414844,
+              42.548389
+            ],
+            [
+              1.42832,
+              42.595898
+            ],
+            [
+              1.458887,
+              42.62168
+            ],
+            [
+              1.501367,
+              42.642725
+            ],
+            [
+              1.568164,
+              42.63501
+            ],
+            [
+              1.709863,
+              42.604443
+            ],
+            [
+              1.739453,
+              42.575928
+            ],
+            [
+              1.740234,
+              42.556738
+            ],
+            [
+              1.713965,
+              42.525635
+            ],
+            [
+              1.706055,
+              42.50332
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "scalerank": 6,
+        "featurecla": "Admin-0 country",
+        "LABELRANK": 6,
+        "SOVEREIGNT": "Monaco",
+        "SOV_A3": "MCO",
+        "ADM0_DIF": 0,
+        "LEVEL": 2,
+        "TYPE": "Sovereign country",
+        "ADMIN": "Monaco",
+        "ADM0_A3": "MCO",
+        "GEOU_DIF": 0,
+        "GEOUNIT": "Monaco",
+        "GU_A3": "MCO",
+        "SU_DIF": 0,
+        "SUBUNIT": "Monaco",
+        "SU_A3": "MCO",
+        "BRK_DIFF": 0,
+        "NAME": "Monaco",
+        "NAME_LONG": "Monaco",
+        "BRK_A3": "MCO",
+        "BRK_NAME": "Monaco",
+        "BRK_GROUP": null,
+        "ABBREV": "Mco.",
+        "POSTAL": "MC",
+        "FORMAL_EN": "Principality of Monaco",
+        "FORMAL_FR": null,
+        "NAME_CIAWF": "Monaco",
+        "NOTE_ADM0": null,
+        "NOTE_BRK": null,
+        "NAME_SORT": "Monaco",
+        "NAME_ALT": null,
+        "MAPCOLOR7": 1,
+        "MAPCOLOR8": 1,
+        "MAPCOLOR9": 2,
+        "MAPCOLOR13": 12,
+        "POP_EST": 38964,
+        "POP_RANK": 7,
+        "GDP_MD_EST": null,
+        "POP_YEAR": 2019,
+        "LASTCENSUS": null,
+        "GDP_YEAR": 2018,
+        "ECONOMY": "2. Developed region: nonG7",
+        "INCOME_GRP": "2. High income: nonOECD",
+        "WIKIPEDIA": null,
+        "FIPS_10_": null,
+        "ISO_A2": "MC",
+        "ISO_A3": "MCO",
+        "ISO_A3_EH": "MCO",
+        "ISO_N3": "492",
+        "UN_A3": "492",
+        "WB_A2": "MC",
+        "WB_A3": "MCO",
+        "WOE_ID": 23424892,
+        "WOE_ID_EH": 23424892,
+        "WOE_NOTE": "Exact WOE match as country",
+        "ADM0_A3_IS": null,
+        "ADM0_A3_US": "MCO",
+        "ADM0_A3_UN": -99,
+        "ADM0_A3_WB": -99,
+        "CONTINENT": "Europe",
+        "REGION_UN": "Europe",
+        "SUBREGION": "Western Europe",
+        "REGION_WB": "Europe & Central Asia",
+        "NAME_LEN": 6,
+        "LONG_LEN": 6,
+        "ABBREV_LEN": 4,
+        "TINY": 5,
+        "HOMEPART": 1,
+        "MIN_ZOOM": 0,
+        "MIN_LABEL": 5,
+        "MAX_LABEL": 10
+      },
+      "bbox": [
+        7.377734,
+        43.731738,
+        7.438672,
+        43.770898
+      ],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              7.438672,
+              43.750439
+            ],
+            [
+              7.377734,
+              43.731738
+            ],
+            [
+              7.380078,
+              43.753223
+            ],
+            [
+              7.39502,
+              43.765332
+            ],
+            [
+              7.414453,
+              43.770898
+            ],
+            [
+              7.436914,
+              43.761475
+            ],
+            [
+              7.438672,
+              43.750439
+            ]
+          ]
+        ]
+      }
     }
   ],
   "bbox": [
